@@ -50,11 +50,12 @@ def run_random_agent_smac(map_name="2s_vs_1sc", episodes=1, max_steps_per_episod
 
             if verbose:
                 print(f"\n--- Episode {e + 1} ---")
-
+                
             for step in range(max_steps_per_episode):
+                print('a')
                 if render:
                     env.render() # May require X server or specific setup
-
+                print('b')
                 # Get observations and available actions for each agent
                 obs_list = env.get_obs() # List of individual agent observations
                 global_state = env.get_state() # Global state

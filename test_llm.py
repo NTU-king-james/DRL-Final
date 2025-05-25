@@ -5,7 +5,6 @@ from __future__ import print_function
 import numpy as np
 from smac.env import StarCraft2Env
 from translate import get_state_NL
-
 import os
 import openai
 import random
@@ -23,7 +22,7 @@ def get_action_description(action_id, n_total_actions):
     return f"action_id_{action_id}"
 
 class LLMAgent:
-    def __init__(self, model_name="llama3.2", verbose=False):
+    def __init__(self, model_name="llama2", verbose=False):
         self.model_name = model_name
         self.verbose = verbose
         openai.api_base = 'http://127.0.0.1:11434/v1' # test with ollama
@@ -200,7 +199,7 @@ if __name__ == "__main__":
     MAX_STEPS = 100
     RENDER_ENV = False
     VERBOSE_AGENT = True  # Controls LLMAgent's internal prints (prompts, chosen actions)
-    VERBOSE_ENV_LOOP = False # Controls step-by-step prints in the main run loop
+    VERBOSE_ENV_LOOP = True # Controls step-by-step prints in the main run loop
 
     # Initialize the LLM Agent
     llm_agent = LLMAgent(verbose=VERBOSE_AGENT)

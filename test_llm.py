@@ -5,6 +5,7 @@ from __future__ import print_function
 import numpy as np
 from smac.env import StarCraft2Env
 from translate import get_state_NL
+
 import os
 import openai
 import random
@@ -154,7 +155,7 @@ def run_smac_with_agent(agent, map_name="3m", episodes=1, max_steps_per_episode=
 
                 # Agent chooses actions
                 actions = agent.act(global_state_nl, avail_actions_list, n_agents, env_info)
-                
+                print("Chosen actions:", actions)
                 reward, terminated, info = env.step(actions)
                 episode_reward += reward
 
@@ -198,8 +199,8 @@ if __name__ == "__main__":
     NUM_EPISODES = 1
     MAX_STEPS = 100
     RENDER_ENV = False
-    VERBOSE_AGENT = True  # Controls LLMAgent's internal prints (prompts, chosen actions)
-    VERBOSE_ENV_LOOP = True # Controls step-by-step prints in the main run loop
+    VERBOSE_AGENT = False  # Controls LLMAgent's internal prints (prompts, chosen actions)
+    VERBOSE_ENV_LOOP = False # Controls step-by-step prints in the main run loop
 
     # Initialize the LLM Agent
     llm_agent = LLMAgent(verbose=VERBOSE_AGENT)

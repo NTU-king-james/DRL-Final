@@ -1,0 +1,1678 @@
+[INFO 13:28:14] pymarl Running command 'my_main'
+[INFO 13:28:14] pymarl Started run with ID "1"
+[DEBUG 13:28:14] pymarl Starting Heartbeat
+[DEBUG 13:28:14] my_main Started
+[INFO 13:28:14] my_main Experiment Parameters:
+[INFO 13:28:14] my_main 
+
+{   'action_selector': 'epsilon_greedy',
+    'agent': 'n_rnn',
+    'agent_output_type': 'q',
+    'batch_size': 128,
+    'batch_size_run': 8,
+    'buffer_cpu_only': True,
+    'buffer_size': 5000,
+    'checkpoint_path': '',
+    'critic_lr': 0.0005,
+    'env': 'sc2',
+    'env_args': {   'continuing_episode': False,
+                    'debug': False,
+                    'difficulty': '7',
+                    'game_version': None,
+                    'heuristic_ai': False,
+                    'heuristic_rest': False,
+                    'map_name': '3m',
+                    'move_amount': 2,
+                    'obs_all_health': True,
+                    'obs_instead_of_state': False,
+                    'obs_last_action': False,
+                    'obs_own_health': True,
+                    'obs_pathing_grid': False,
+                    'obs_terrain_height': False,
+                    'obs_timestep_number': False,
+                    'replay_dir': '',
+                    'replay_prefix': '',
+                    'reward_death_value': 10,
+                    'reward_defeat': 0,
+                    'reward_negative_scale': 0.5,
+                    'reward_only_positive': True,
+                    'reward_scale': True,
+                    'reward_scale_rate': 20,
+                    'reward_sparse': False,
+                    'reward_win': 200,
+                    'seed': 539366547,
+                    'state_last_action': True,
+                    'state_timestep_number': False,
+                    'step_mul': 8},
+    'epsilon_anneal_time': 100000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'gain': 0.01,
+    'gamma': 0.99,
+    'grad_norm_clip': 10,
+    'hypernet_embed': 64,
+    'label': 'default_label',
+    'learner': 'nq_learner',
+    'learner_log_interval': 10000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 10000,
+    'lr': 0.001,
+    'mac': 'n_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 32,
+    'name': 'qmix_env=8_adam_td_lambda',
+    'obs_agent_id': True,
+    'obs_last_action': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'optimizer': 'adam',
+    'per_alpha': 0.6,
+    'per_beta': 0.4,
+    'q_lambda': False,
+    'repeat_id': 1,
+    'return_priority': False,
+    'rnn_hidden_dim': 64,
+    'run': 'default',
+    'runner': 'parallel',
+    'runner_log_interval': 10000,
+    'save_model': False,
+    'save_model_interval': 2000000,
+    'save_replay': False,
+    'seed': 539366547,
+    't_max': 10050000,
+    'target_update_interval': 200,
+    'td_lambda': 0.6,
+    'test_greedy': True,
+    'test_interval': 10000,
+    'test_nepisode': 32,
+    'use_cuda': True,
+    'use_layer_norm': False,
+    'use_orthogonal': False,
+    'use_per': False,
+    'use_tensorboard': False}
+
+Mixer Size: 
+17.761K
+[INFO 13:28:16] my_main Beginning training for 10050000 timesteps
+[INFO 13:28:16] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 38011 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-l1fedhi4/
+[INFO 13:28:16] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 36593 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-4_0c8i_r/
+[INFO 13:28:16] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 40747 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-_oj8ns82/
+[INFO 13:28:16] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 35961 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-nf76qy5r/
+[INFO 13:28:16] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 45611 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-yztir1ka/
+[INFO 13:28:16] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 36663 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-baqcnmah/
+[INFO 13:28:16] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 33219 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-g2e2p6ut/
+[INFO 13:28:16] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 45235 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-lwi6dk6u/
+[INFO 13:28:16] absl Connecting to: ws://127.0.0.1:36593/sc2api, attempt: 0, running: True
+[INFO 13:28:16] absl Connecting to: ws://127.0.0.1:40747/sc2api, attempt: 0, running: True
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 36593 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-4_0c8i_r/'
+[INFO 13:28:16] absl Connecting to: ws://127.0.0.1:35961/sc2api, attempt: 0, running: True
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 40747 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-_oj8ns82/'
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 35961 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-nf76qy5r/'
+[INFO 13:28:16] absl Connecting to: ws://127.0.0.1:45611/sc2api, attempt: 0, running: True
+[INFO 13:28:16] absl Connecting to: ws://127.0.0.1:33219/sc2api, attempt: 0, running: True
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 45611 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-yztir1ka/'
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 33219 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-g2e2p6ut/'
+[INFO 13:28:16] absl Connecting to: ws://127.0.0.1:36663/sc2api, attempt: 0, running: True
+[INFO 13:28:16] absl Connecting to: ws://127.0.0.1:45235/sc2api, attempt: 0, running: True
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 36663 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-baqcnmah/'
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 45235 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-lwi6dk6u/'
+[INFO 13:28:16] absl Connecting to: ws://127.0.0.1:38011/sc2api, attempt: 0, running: True
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 38011 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-l1fedhi4/'
+Starting up...
+Starting up...
+Starting up...
+Startup Phase 1 complete
+Starting up...
+Starting up...
+Starting up...
+Starting up...
+Starting up...
+Startup Phase 1 complete
+Startup Phase 1 complete
+Startup Phase 1 complete
+Startup Phase 1 complete
+Startup Phase 1 complete
+Startup Phase 1 complete
+Startup Phase 1 complete
+[INFO 13:28:17] absl Connecting to: ws://127.0.0.1:36593/sc2api, attempt: 1, running: True
+[INFO 13:28:17] absl Connecting to: ws://127.0.0.1:40747/sc2api, attempt: 1, running: True
+[INFO 13:28:17] absl Connecting to: ws://127.0.0.1:35961/sc2api, attempt: 1, running: True
+[INFO 13:28:17] absl Connecting to: ws://127.0.0.1:45611/sc2api, attempt: 1, running: True
+[INFO 13:28:17] absl Connecting to: ws://127.0.0.1:33219/sc2api, attempt: 1, running: True
+[INFO 13:28:17] absl Connecting to: ws://127.0.0.1:36663/sc2api, attempt: 1, running: True
+[INFO 13:28:17] absl Connecting to: ws://127.0.0.1:45235/sc2api, attempt: 1, running: True
+[INFO 13:28:17] absl Connecting to: ws://127.0.0.1:38011/sc2api, attempt: 1, running: True
+[INFO 13:28:18] absl Connecting to: ws://127.0.0.1:36593/sc2api, attempt: 2, running: True
+[INFO 13:28:18] absl Connecting to: ws://127.0.0.1:40747/sc2api, attempt: 2, running: True
+[INFO 13:28:18] absl Connecting to: ws://127.0.0.1:35961/sc2api, attempt: 2, running: True
+[INFO 13:28:18] absl Connecting to: ws://127.0.0.1:45611/sc2api, attempt: 2, running: True
+[INFO 13:28:18] absl Connecting to: ws://127.0.0.1:33219/sc2api, attempt: 2, running: True
+[INFO 13:28:18] absl Connecting to: ws://127.0.0.1:45235/sc2api, attempt: 2, running: True
+[INFO 13:28:18] absl Connecting to: ws://127.0.0.1:36663/sc2api, attempt: 2, running: True
+[INFO 13:28:18] absl Connecting to: ws://127.0.0.1:38011/sc2api, attempt: 2, running: True
+[INFO 13:28:19] absl Connecting to: ws://127.0.0.1:36593/sc2api, attempt: 3, running: True
+[INFO 13:28:19] absl Connecting to: ws://127.0.0.1:40747/sc2api, attempt: 3, running: True
+[INFO 13:28:19] absl Connecting to: ws://127.0.0.1:35961/sc2api, attempt: 3, running: True
+[INFO 13:28:19] absl Connecting to: ws://127.0.0.1:45611/sc2api, attempt: 3, running: True
+[INFO 13:28:19] absl Connecting to: ws://127.0.0.1:33219/sc2api, attempt: 3, running: True
+[INFO 13:28:19] absl Connecting to: ws://127.0.0.1:36663/sc2api, attempt: 3, running: True
+[INFO 13:28:19] absl Connecting to: ws://127.0.0.1:45235/sc2api, attempt: 3, running: True
+[INFO 13:28:19] absl Connecting to: ws://127.0.0.1:38011/sc2api, attempt: 3, running: True
+Startup Phase 2 complete
+Creating stub renderer...
+Startup Phase 2 complete
+Creating stub renderer...
+Startup Phase 2 complete
+Creating stub renderer...
+Startup Phase 2 complete
+Creating stub renderer...
+Startup Phase 2 complete
+Creating stub renderer...
+[INFO 13:28:20] absl Connecting to: ws://127.0.0.1:36593/sc2api, attempt: 4, running: True
+[INFO 13:28:20] absl Connecting to: ws://127.0.0.1:40747/sc2api, attempt: 4, running: True
+[INFO 13:28:20] absl Connecting to: ws://127.0.0.1:35961/sc2api, attempt: 4, running: True
+[INFO 13:28:20] absl Connecting to: ws://127.0.0.1:45611/sc2api, attempt: 4, running: True
+[INFO 13:28:20] absl Connecting to: ws://127.0.0.1:33219/sc2api, attempt: 4, running: True
+[INFO 13:28:20] absl Connecting to: ws://127.0.0.1:36663/sc2api, attempt: 4, running: True
+[INFO 13:28:20] absl Connecting to: ws://127.0.0.1:45235/sc2api, attempt: 4, running: True
+[INFO 13:28:20] absl Connecting to: ws://127.0.0.1:38011/sc2api, attempt: 4, running: True
+Listening on: 127.0.0.1:40747
+Startup Phase 3 complete. Ready for commands.
+Listening on: 127.0.0.1:35961
+Startup Phase 3 complete. Ready for commands.
+Listening on: 127.0.0.1:36663
+Startup Phase 3 complete. Ready for commands.
+Listening on: 127.0.0.1:38011
+Startup Phase 3 complete. Ready for commands.
+Listening on: 127.0.0.1:33219
+Startup Phase 3 complete. Ready for commands.
+Startup Phase 2 complete
+Creating stub renderer...
+Startup Phase 2 complete
+Creating stub renderer...
+Startup Phase 2 complete
+Creating stub renderer...
+Listening on: 127.0.0.1:36593
+Startup Phase 3 complete. Ready for commands.
+Listening on: 127.0.0.1:45611
+Startup Phase 3 complete. Ready for commands.
+Listening on: 127.0.0.1:45235
+Startup Phase 3 complete. Ready for commands.
+[INFO 13:28:21] absl Connecting to: ws://127.0.0.1:36593/sc2api, attempt: 5, running: True
+[INFO 13:28:21] absl Connecting to: ws://127.0.0.1:40747/sc2api, attempt: 5, running: True
+ConnectHandler: Request from 127.0.0.1:41762 accepted
+ReadyHandler: 127.0.0.1:41762 ready
+ConnectHandler: Request from 127.0.0.1:52794 accepted
+ReadyHandler: 127.0.0.1:52794 ready
+[INFO 13:28:21] absl Connecting to: ws://127.0.0.1:35961/sc2api, attempt: 5, running: True
+ConnectHandler: Request from 127.0.0.1:56706 accepted
+ReadyHandler: 127.0.0.1:56706 ready
+[INFO 13:28:21] absl Connecting to: ws://127.0.0.1:45611/sc2api, attempt: 5, running: True
+ConnectHandler: Request from 127.0.0.1:59784 accepted
+ReadyHandler: 127.0.0.1:59784 ready
+[INFO 13:28:21] absl Connecting to: ws://127.0.0.1:33219/sc2api, attempt: 5, running: True
+ConnectHandler: Request from 127.0.0.1:48776 accepted
+ReadyHandler: 127.0.0.1:48776 ready
+[INFO 13:28:21] absl Connecting to: ws://127.0.0.1:36663/sc2api, attempt: 5, running: True
+ConnectHandler: Request from 127.0.0.1:60672 accepted
+ReadyHandler: 127.0.0.1:60672 ready
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Requesting to join a single player game
+Configuring interface options
+Launching next game.
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Launching next game.
+Launching next game.
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 4
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 7
+Next launch phase started: 8
+Next launch phase started: 8
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Launching next game.
+Next launch phase started: 2
+Next launch phase started: 3
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Launching next game.
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Launching next game.
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+[INFO 13:28:21] absl Connecting to: ws://127.0.0.1:45235/sc2api, attempt: 5, running: True
+ConnectHandler: Request from 127.0.0.1:44522 accepted
+ReadyHandler: 127.0.0.1:44522 ready
+[INFO 13:28:21] absl Connecting to: ws://127.0.0.1:38011/sc2api, attempt: 5, running: True
+ConnectHandler: Request from 127.0.0.1:42594 accepted
+ReadyHandler: 127.0.0.1:42594 ready
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Launching next game.
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Launching next game.
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+Sending ResponseJoinGame
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+Sending ResponseJoinGame
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+/root/DRL-Final/pymarl2/src/components/episode_buffer.py:103: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:278.)
+  v = th.tensor(v, dtype=dtype, device=self.device)
+/root/DRL-Final/pymarl2/src/components/episode_buffer.py:103: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  v = th.tensor(v, dtype=dtype, device=self.device)
+
+===== LLM PROMPT (Sending to API) =====
+===== LLM PROMPT (Sending to API) =====
+===== LLM PROMPT (Sending to API) =====
+
+
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+
+=======================================
+
+=======================================
+=======================================
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+[DEBUG 13:28:36] openai message='Request to OpenAI API' method=post path=http://127.0.0.1:11434/v1/chat/completions
+[DEBUG 13:28:36] openai message='Request to OpenAI API' method=post path=http://127.0.0.1:11434/v1/chat/completions
+
+===== LLM PROMPT (Sending to API) =====
+===== LLM PROMPT (Sending to API) =====
+
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+
+=======================================
+=======================================
+[DEBUG 13:28:36] openai api_version=None data='{"model": "llama2", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 13:28:36] openai message='Request to OpenAI API' method=post path=http://127.0.0.1:11434/v1/chat/completions
+[DEBUG 13:28:36] openai api_version=None data='{"model": "llama2", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 13:28:36] openai api_version=None data='{"model": "llama2", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 13:28:36] openai message='Request to OpenAI API' method=post path=http://127.0.0.1:11434/v1/chat/completions
+[DEBUG 13:28:36] openai api_version=None data='{"model": "llama2", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 13:28:36] openai message='Request to OpenAI API' method=post path=http://127.0.0.1:11434/v1/chat/completions
+[DEBUG 13:28:36] openai api_version=None data='{"model": "llama2", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 13:28:36] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[DEBUG 13:28:36] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[DEBUG 13:28:36] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[DEBUG 13:28:36] openai message='Request to OpenAI API' method=post path=http://127.0.0.1:11434/v1/chat/completions
+[DEBUG 13:28:36] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[DEBUG 13:28:36] openai message='Request to OpenAI API' method=post path=http://127.0.0.1:11434/v1/chat/completions
+[DEBUG 13:28:36] openai message='Request to OpenAI API' method=post path=http://127.0.0.1:11434/v1/chat/completions
+[DEBUG 13:28:36] openai api_version=None data='{"model": "llama2", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 13:28:36] openai api_version=None data='{"model": "llama2", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 13:28:36] openai api_version=None data='{"model": "llama2", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 13:28:36] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[DEBUG 13:28:36] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[DEBUG 13:28:36] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[DEBUG 13:28:36] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[DEBUG 13:28:36] urllib3.connectionpool Starting new HTTP connection (1): 127.0.0.1:11434
+[DEBUG 13:28:36] urllib3.connectionpool Starting new HTTP connection (1): 127.0.0.1:11434
+[DEBUG 13:28:36] urllib3.connectionpool Starting new HTTP connection (1): 127.0.0.1:11434
+[DEBUG 13:28:36] urllib3.connectionpool Starting new HTTP connection (1): 127.0.0.1:11434
+Process Process-3:
+Process Process-8:
+Process Process-1:
+Process Process-5:
+[DEBUG 13:28:36] urllib3.connectionpool Starting new HTTP connection (1): 127.0.0.1:11434
+[DEBUG 13:28:36] urllib3.connectionpool Starting new HTTP connection (1): 127.0.0.1:11434
+[DEBUG 13:28:36] urllib3.connectionpool Starting new HTTP connection (1): 127.0.0.1:11434
+[DEBUG 13:28:36] urllib3.connectionpool Starting new HTTP connection (1): 127.0.0.1:11434
+Process Process-4:
+Process Process-6:
+Process Process-2:
+Process Process-7:
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+
+The above exception was the direct cause of the following exception:
+
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fecdd6c3dc0>: Failed to establish a new connection: [Errno 111] Connection refused
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+
+The above exception was the direct cause of the following exception:
+
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3dc0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused
+Traceback (most recent call last):
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 596, in request_raw
+    result = _thread_context.session.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3dc0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+
+During handling of the above exception, another exception occurred:
+
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 79, in _get_actions_from_llm_api
+    response = openai.ChatCompletion.create(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 288, in request
+    result = self.request_raw(
+ConnectionRefusedError: [Errno 111] Connection refused
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 609, in request_raw
+    raise error.APIConnectionError(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 596, in request_raw
+    result = _thread_context.session.request(
+ConnectionRefusedError: [Errno 111] Connection refused
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+openai.error.APIConnectionError: Error communicating with OpenAI: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3dc0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+The above exception was the direct cause of the following exception:
+
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+Traceback (most recent call last):
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/root/DRL-Final/pymarl2/src/runners/parallel_runner.py", line 233, in env_worker
+    reward, terminated, env_info = env.step(actions)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/root/DRL-Final/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 436, in step
+    llm_instruction = self.llm_agent.act(global_state_nl, avail_actions_list, n_agents, env_info)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 104, in act
+    chosen_actions = list(self._get_actions_from_llm_api(prompt, n_agents, all_agent_available_action_indices, n_total_actions))
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 92, in _get_actions_from_llm_api
+    print("Parse action error!\nLLM output:",llm_output_str)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 79, in _get_actions_from_llm_api
+    response = openai.ChatCompletion.create(
+UnboundLocalError: local variable 'llm_output_str' referenced before assignment
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 288, in request
+    result = self.request_raw(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 609, in request_raw
+    raise error.APIConnectionError(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+openai.error.APIConnectionError: Error communicating with OpenAI: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Traceback (most recent call last):
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fecdd6c3940>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+
+The above exception was the direct cause of the following exception:
+
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+
+During handling of the above exception, another exception occurred:
+
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/root/DRL-Final/pymarl2/src/runners/parallel_runner.py", line 233, in env_worker
+    reward, terminated, env_info = env.step(actions)
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3940>: Failed to establish a new connection: [Errno 111] Connection refused'))
+  File "/root/DRL-Final/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 436, in step
+    llm_instruction = self.llm_agent.act(global_state_nl, avail_actions_list, n_agents, env_info)
+
+During handling of the above exception, another exception occurred:
+
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 596, in request_raw
+    result = _thread_context.session.request(
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 104, in act
+    chosen_actions = list(self._get_actions_from_llm_api(prompt, n_agents, all_agent_available_action_indices, n_total_actions))
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 92, in _get_actions_from_llm_api
+    print("Parse action error!\nLLM output:",llm_output_str)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+UnboundLocalError: local variable 'llm_output_str' referenced before assignment
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 596, in request_raw
+    result = _thread_context.session.request(
+
+The above exception was the direct cause of the following exception:
+
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3940>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+The above exception was the direct cause of the following exception:
+
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 79, in _get_actions_from_llm_api
+    response = openai.ChatCompletion.create(
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 288, in request
+    result = self.request_raw(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 609, in request_raw
+    raise error.APIConnectionError(
+openai.error.APIConnectionError: Error communicating with OpenAI: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 79, in _get_actions_from_llm_api
+    response = openai.ChatCompletion.create(
+
+During handling of the above exception, another exception occurred:
+
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 288, in request
+    result = self.request_raw(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 609, in request_raw
+    raise error.APIConnectionError(
+openai.error.APIConnectionError: Error communicating with OpenAI: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3940>: Failed to establish a new connection: [Errno 111] Connection refused'))
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+
+During handling of the above exception, another exception occurred:
+
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+Traceback (most recent call last):
+  File "/root/DRL-Final/pymarl2/src/runners/parallel_runner.py", line 233, in env_worker
+    reward, terminated, env_info = env.step(actions)
+  File "/root/DRL-Final/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 436, in step
+    llm_instruction = self.llm_agent.act(global_state_nl, avail_actions_list, n_agents, env_info)
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 104, in act
+    chosen_actions = list(self._get_actions_from_llm_api(prompt, n_agents, all_agent_available_action_indices, n_total_actions))
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 92, in _get_actions_from_llm_api
+    print("Parse action error!\nLLM output:",llm_output_str)
+UnboundLocalError: local variable 'llm_output_str' referenced before assignment
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/root/DRL-Final/pymarl2/src/runners/parallel_runner.py", line 233, in env_worker
+    reward, terminated, env_info = env.step(actions)
+  File "/root/DRL-Final/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 436, in step
+    llm_instruction = self.llm_agent.act(global_state_nl, avail_actions_list, n_agents, env_info)
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 104, in act
+    chosen_actions = list(self._get_actions_from_llm_api(prompt, n_agents, all_agent_available_action_indices, n_total_actions))
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 92, in _get_actions_from_llm_api
+    print("Parse action error!\nLLM output:",llm_output_str)
+UnboundLocalError: local variable 'llm_output_str' referenced before assignment
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 596, in request_raw
+    result = _thread_context.session.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 79, in _get_actions_from_llm_api
+    response = openai.ChatCompletion.create(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 288, in request
+    result = self.request_raw(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 609, in request_raw
+    raise error.APIConnectionError(
+openai.error.APIConnectionError: Error communicating with OpenAI: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/root/DRL-Final/pymarl2/src/runners/parallel_runner.py", line 233, in env_worker
+    reward, terminated, env_info = env.step(actions)
+  File "/root/DRL-Final/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 436, in step
+    llm_instruction = self.llm_agent.act(global_state_nl, avail_actions_list, n_agents, env_info)
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 104, in act
+    chosen_actions = list(self._get_actions_from_llm_api(prompt, n_agents, all_agent_available_action_indices, n_total_actions))
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 92, in _get_actions_from_llm_api
+    print("Parse action error!\nLLM output:",llm_output_str)
+UnboundLocalError: local variable 'llm_output_str' referenced before assignment
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fecdd6c3940>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3940>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 596, in request_raw
+    result = _thread_context.session.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3940>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 79, in _get_actions_from_llm_api
+    response = openai.ChatCompletion.create(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 288, in request
+    result = self.request_raw(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 609, in request_raw
+    raise error.APIConnectionError(
+openai.error.APIConnectionError: Error communicating with OpenAI: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3940>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/root/DRL-Final/pymarl2/src/runners/parallel_runner.py", line 233, in env_worker
+    reward, terminated, env_info = env.step(actions)
+  File "/root/DRL-Final/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 436, in step
+    llm_instruction = self.llm_agent.act(global_state_nl, avail_actions_list, n_agents, env_info)
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 104, in act
+    chosen_actions = list(self._get_actions_from_llm_api(prompt, n_agents, all_agent_available_action_indices, n_total_actions))
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 92, in _get_actions_from_llm_api
+    print("Parse action error!\nLLM output:",llm_output_str)
+UnboundLocalError: local variable 'llm_output_str' referenced before assignment
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fecdd6c3160>: Failed to establish a new connection: [Errno 111] Connection refused
+Traceback (most recent call last):
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3160>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 596, in request_raw
+    result = _thread_context.session.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 596, in request_raw
+    result = _thread_context.session.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+The above exception was the direct cause of the following exception:
+
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3160>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Traceback (most recent call last):
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 79, in _get_actions_from_llm_api
+    response = openai.ChatCompletion.create(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 79, in _get_actions_from_llm_api
+    response = openai.ChatCompletion.create(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 288, in request
+    result = self.request_raw(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 609, in request_raw
+    raise error.APIConnectionError(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 288, in request
+    result = self.request_raw(
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/site-packages/openai/api_requestor.py", line 609, in request_raw
+    raise error.APIConnectionError(
+openai.error.APIConnectionError: Error communicating with OpenAI: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+openai.error.APIConnectionError: Error communicating with OpenAI: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fecdd6c3160>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Traceback (most recent call last):
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/root/DRL-Final/pymarl2/src/runners/parallel_runner.py", line 233, in env_worker
+    reward, terminated, env_info = env.step(actions)
+  File "/root/miniconda3/envs/pysc2-env/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/root/DRL-Final/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 436, in step
+    llm_instruction = self.llm_agent.act(global_state_nl, avail_actions_list, n_agents, env_info)
+  File "/root/DRL-Final/pymarl2/src/runners/parallel_runner.py", line 233, in env_worker
+    reward, terminated, env_info = env.step(actions)
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 104, in act
+    chosen_actions = list(self._get_actions_from_llm_api(prompt, n_agents, all_agent_available_action_indices, n_total_actions))
+  File "/root/DRL-Final/pymarl2/src/envs/starcraft/StarCraft2Env.py", line 436, in step
+    llm_instruction = self.llm_agent.act(global_state_nl, avail_actions_list, n_agents, env_info)
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 92, in _get_actions_from_llm_api
+    print("Parse action error!\nLLM output:",llm_output_str)
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 104, in act
+    chosen_actions = list(self._get_actions_from_llm_api(prompt, n_agents, all_agent_available_action_indices, n_total_actions))
+  File "/root/DRL-Final/pymarl2/src/llm/test_llm.py", line 92, in _get_actions_from_llm_api
+    print("Parse action error!\nLLM output:",llm_output_str)
+UnboundLocalError: local variable 'llm_output_str' referenced before assignment
+UnboundLocalError: local variable 'llm_output_str' referenced before assignment
+CloseHandler: 127.0.0.1:41762 disconnected
+CloseHandler: 127.0.0.1:56706 disconnected
+CloseHandler: 127.0.0.1:44522 disconnected
+CloseHandler: 127.0.0.1:60672 disconnected
+CloseHandler: 127.0.0.1:52794 disconnected
+CloseHandler: 127.0.0.1:42594 disconnected
+CloseHandler: 127.0.0.1:48776 disconnected
+CloseHandler: 127.0.0.1:59784 disconnected

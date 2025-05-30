@@ -1,0 +1,2457 @@
+[INFO 14:24:35] pymarl Running command 'my_main'
+[INFO 14:24:35] pymarl Started run with ID "2"
+[DEBUG 14:24:35] pymarl Starting Heartbeat
+[DEBUG 14:24:35] my_main Started
+[INFO 14:24:35] my_main Experiment Parameters:
+[INFO 14:24:35] my_main 
+
+{   'action_selector': 'epsilon_greedy',
+    'agent': 'n_rnn',
+    'agent_output_type': 'q',
+    'batch_size': 128,
+    'batch_size_run': 8,
+    'buffer_cpu_only': True,
+    'buffer_size': 5000,
+    'checkpoint_path': '',
+    'critic_lr': 0.0005,
+    'env': 'sc2',
+    'env_args': {   'continuing_episode': False,
+                    'debug': False,
+                    'difficulty': '7',
+                    'game_version': None,
+                    'heuristic_ai': False,
+                    'heuristic_rest': False,
+                    'map_name': '3m',
+                    'move_amount': 2,
+                    'obs_all_health': True,
+                    'obs_instead_of_state': False,
+                    'obs_last_action': False,
+                    'obs_own_health': True,
+                    'obs_pathing_grid': False,
+                    'obs_terrain_height': False,
+                    'obs_timestep_number': False,
+                    'replay_dir': '',
+                    'replay_prefix': '',
+                    'reward_death_value': 10,
+                    'reward_defeat': 0,
+                    'reward_negative_scale': 0.5,
+                    'reward_only_positive': True,
+                    'reward_scale': True,
+                    'reward_scale_rate': 20,
+                    'reward_sparse': False,
+                    'reward_win': 200,
+                    'seed': 335784480,
+                    'state_last_action': True,
+                    'state_timestep_number': False,
+                    'step_mul': 8},
+    'epsilon_anneal_time': 100000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'gain': 0.01,
+    'gamma': 0.99,
+    'grad_norm_clip': 10,
+    'hypernet_embed': 64,
+    'label': 'default_label',
+    'learner': 'nq_learner',
+    'learner_log_interval': 10000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 10000,
+    'lr': 0.001,
+    'mac': 'n_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 32,
+    'name': 'qmix_env=8_adam_td_lambda',
+    'obs_agent_id': True,
+    'obs_last_action': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'optimizer': 'adam',
+    'per_alpha': 0.6,
+    'per_beta': 0.4,
+    'q_lambda': False,
+    'repeat_id': 1,
+    'return_priority': False,
+    'rnn_hidden_dim': 64,
+    'run': 'default',
+    'runner': 'parallel',
+    'runner_log_interval': 10000,
+    'save_model': False,
+    'save_model_interval': 2000000,
+    'save_replay': False,
+    'seed': 335784480,
+    't_max': 10050000,
+    'target_update_interval': 200,
+    'td_lambda': 0.6,
+    'test_greedy': True,
+    'test_interval': 10000,
+    'test_nepisode': 32,
+    'use_cuda': True,
+    'use_layer_norm': False,
+    'use_orthogonal': False,
+    'use_per': False,
+    'use_tensorboard': False}
+
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+[DEBUG 14:24:35] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:24:35] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "test"}], "max_tokens": 5}' message='Post details'
+[DEBUG 14:24:35] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[DEBUG 14:24:35] urllib3.connectionpool Starting new HTTP connection (1): localhost:11434
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+[DEBUG 14:24:35] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:24:35] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "test"}], "max_tokens": 5}' message='Post details'
+[DEBUG 14:24:35] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+[DEBUG 14:24:35] urllib3.connectionpool Starting new HTTP connection (1): localhost:11434
+[DEBUG 14:24:35] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:24:35] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "test"}], "max_tokens": 5}' message='Post details'
+[DEBUG 14:24:35] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+[DEBUG 14:24:35] urllib3.connectionpool Starting new HTTP connection (1): localhost:11434
+[DEBUG 14:24:35] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:24:35] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "test"}], "max_tokens": 5}' message='Post details'
+[DEBUG 14:24:35] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+[DEBUG 14:24:35] urllib3.connectionpool Starting new HTTP connection (1): localhost:11434
+[DEBUG 14:24:35] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:24:35] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "test"}], "max_tokens": 5}' message='Post details'
+[DEBUG 14:24:35] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[DEBUG 14:24:35] urllib3.connectionpool Starting new HTTP connection (1): localhost:11434
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+[DEBUG 14:24:35] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:24:35] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "test"}], "max_tokens": 5}' message='Post details'
+[DEBUG 14:24:35] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[DEBUG 14:24:35] urllib3.connectionpool Starting new HTTP connection (1): localhost:11434
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+[DEBUG 14:24:35] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:24:35] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "test"}], "max_tokens": 5}' message='Post details'
+[DEBUG 14:24:35] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[DEBUG 14:24:35] urllib3.connectionpool Starting new HTTP connection (1): localhost:11434
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+[DEBUG 14:24:35] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:24:35] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "test"}], "max_tokens": 5}' message='Post details'
+[DEBUG 14:24:35] urllib3.util.retry Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[DEBUG 14:24:35] urllib3.connectionpool Starting new HTTP connection (1): localhost:11434
+[DEBUG 14:24:35] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 309
+[DEBUG 14:24:35] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+成功連接到 Ollama API
+[DEBUG 14:24:35] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 309
+[DEBUG 14:24:35] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+成功連接到 Ollama API
+Mixer Size: 
+17.761K
+[DEBUG 14:24:35] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 309
+[DEBUG 14:24:35] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+成功連接到 Ollama API
+[DEBUG 14:24:35] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 308
+[DEBUG 14:24:35] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+成功連接到 Ollama API
+[DEBUG 14:24:35] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 308
+[DEBUG 14:24:35] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+成功連接到 Ollama API
+[DEBUG 14:24:35] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 309
+[DEBUG 14:24:35] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+成功連接到 Ollama API
+[DEBUG 14:24:35] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 309
+[DEBUG 14:24:35] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+成功連接到 Ollama API
+[DEBUG 14:24:36] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 309
+[DEBUG 14:24:36] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+成功連接到 Ollama API
+[INFO 14:24:39] my_main Beginning training for 10050000 timesteps
+[INFO 14:24:39] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 41921 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-367y689g/
+[INFO 14:24:39] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 33695 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-ps8ondp5/
+[INFO 14:24:39] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 45207 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-h9mm8y2o/
+[INFO 14:24:39] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 33687 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-fcjc5969/
+[INFO 14:24:39] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 39891 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-3wqgeg5j/
+[INFO 14:24:39] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 42727 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-dltavcfv/
+[INFO 14:24:39] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 35951 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-sgagn2mn/
+[INFO 14:24:39] absl Launching SC2: /root/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 39415 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-a1_0xbzs/
+[INFO 14:24:39] absl Connecting to: ws://127.0.0.1:33695/sc2api, attempt: 0, running: True
+[INFO 14:24:39] absl Connecting to: ws://127.0.0.1:35951/sc2api, attempt: 0, running: True
+[INFO 14:24:39] absl Connecting to: ws://127.0.0.1:45207/sc2api, attempt: 0, running: True
+[INFO 14:24:39] absl Connecting to: ws://127.0.0.1:41921/sc2api, attempt: 0, running: True
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 33695 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-ps8ondp5/'
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 45207 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-h9mm8y2o/'
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 35951 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-sgagn2mn/'
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 41921 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-367y689g/'
+[INFO 14:24:39] absl Connecting to: ws://127.0.0.1:42727/sc2api, attempt: 0, running: True
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+[INFO 14:24:39] absl Connecting to: ws://127.0.0.1:39415/sc2api, attempt: 0, running: True
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 42727 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-dltavcfv/'
+[INFO 14:24:39] absl Connecting to: ws://127.0.0.1:33687/sc2api, attempt: 0, running: True
+[INFO 14:24:39] absl Connecting to: ws://127.0.0.1:39891/sc2api, attempt: 0, running: True
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 39415 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-a1_0xbzs/'
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 33687 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-fcjc5969/'
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/root/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 39891 -dataDir /root/StarCraftII/ -tempDir /tmp/sc-3wqgeg5j/'
+Starting up...
+Starting up...
+Starting up...
+Starting up...
+Starting up...
+Startup Phase 1 complete
+Startup Phase 1 complete
+Starting up...
+Starting up...
+Starting up...
+Startup Phase 1 complete
+Startup Phase 1 complete
+Startup Phase 1 complete
+Startup Phase 1 complete
+Startup Phase 1 complete
+Startup Phase 1 complete
+[INFO 14:24:40] absl Connecting to: ws://127.0.0.1:33695/sc2api, attempt: 1, running: True
+[INFO 14:24:40] absl Connecting to: ws://127.0.0.1:45207/sc2api, attempt: 1, running: True
+[INFO 14:24:40] absl Connecting to: ws://127.0.0.1:35951/sc2api, attempt: 1, running: True
+[INFO 14:24:40] absl Connecting to: ws://127.0.0.1:41921/sc2api, attempt: 1, running: True
+[INFO 14:24:40] absl Connecting to: ws://127.0.0.1:39415/sc2api, attempt: 1, running: True
+[INFO 14:24:40] absl Connecting to: ws://127.0.0.1:42727/sc2api, attempt: 1, running: True
+[INFO 14:24:41] absl Connecting to: ws://127.0.0.1:33687/sc2api, attempt: 1, running: True
+[INFO 14:24:41] absl Connecting to: ws://127.0.0.1:39891/sc2api, attempt: 1, running: True
+[INFO 14:24:41] absl Connecting to: ws://127.0.0.1:33695/sc2api, attempt: 2, running: True
+[INFO 14:24:41] absl Connecting to: ws://127.0.0.1:35951/sc2api, attempt: 2, running: True
+[INFO 14:24:41] absl Connecting to: ws://127.0.0.1:45207/sc2api, attempt: 2, running: True
+[INFO 14:24:41] absl Connecting to: ws://127.0.0.1:41921/sc2api, attempt: 2, running: True
+[INFO 14:24:42] absl Connecting to: ws://127.0.0.1:39415/sc2api, attempt: 2, running: True
+[INFO 14:24:42] absl Connecting to: ws://127.0.0.1:42727/sc2api, attempt: 2, running: True
+[INFO 14:24:42] absl Connecting to: ws://127.0.0.1:33687/sc2api, attempt: 2, running: True
+[INFO 14:24:42] absl Connecting to: ws://127.0.0.1:39891/sc2api, attempt: 2, running: True
+Startup Phase 2 complete
+Creating stub renderer...
+Startup Phase 2 complete
+Creating stub renderer...
+Startup Phase 2 complete
+Creating stub renderer...
+Startup Phase 2 complete
+Creating stub renderer...
+Startup Phase 2 complete
+Creating stub renderer...
+Startup Phase 2 complete
+Creating stub renderer...
+[INFO 14:24:42] absl Connecting to: ws://127.0.0.1:33695/sc2api, attempt: 3, running: True
+[INFO 14:24:42] absl Connecting to: ws://127.0.0.1:35951/sc2api, attempt: 3, running: True
+[INFO 14:24:42] absl Connecting to: ws://127.0.0.1:45207/sc2api, attempt: 3, running: True
+[INFO 14:24:42] absl Connecting to: ws://127.0.0.1:41921/sc2api, attempt: 3, running: True
+[INFO 14:24:43] absl Connecting to: ws://127.0.0.1:42727/sc2api, attempt: 3, running: True
+[INFO 14:24:43] absl Connecting to: ws://127.0.0.1:39415/sc2api, attempt: 3, running: True
+[INFO 14:24:43] absl Connecting to: ws://127.0.0.1:39891/sc2api, attempt: 3, running: True
+[INFO 14:24:43] absl Connecting to: ws://127.0.0.1:33687/sc2api, attempt: 3, running: True
+Startup Phase 2 complete
+Creating stub renderer...
+Startup Phase 2 complete
+Creating stub renderer...
+Listening on: 127.0.0.1:45207
+Listening on: 127.0.0.1:39891
+Listening on: 127.0.0.1:33687
+Listening on: 127.0.0.1:35951
+Startup Phase 3 complete. Ready for commands.
+Startup Phase 3 complete. Ready for commands.
+Startup Phase 3 complete. Ready for commands.
+Startup Phase 3 complete. Ready for commands.
+Listening on: 127.0.0.1:41921
+Startup Phase 3 complete. Ready for commands.
+Listening on: 127.0.0.1:42727
+Startup Phase 3 complete. Ready for commands.
+Listening on: 127.0.0.1:33695
+Startup Phase 3 complete. Ready for commands.
+Listening on: 127.0.0.1:39415
+Startup Phase 3 complete. Ready for commands.
+[INFO 14:24:43] absl Connecting to: ws://127.0.0.1:35951/sc2api, attempt: 4, running: True
+ConnectHandler: Request from 127.0.0.1:43822 accepted
+ReadyHandler: 127.0.0.1:43822 ready
+[INFO 14:24:43] absl Connecting to: ws://127.0.0.1:33695/sc2api, attempt: 4, running: True
+[INFO 14:24:43] absl Connecting to: ws://127.0.0.1:45207/sc2api, attempt: 4, running: True
+ConnectHandler: Request from 127.0.0.1:46444 accepted
+ReadyHandler: 127.0.0.1:46444 ready
+ConnectHandler: Request from 127.0.0.1:35274 accepted
+ReadyHandler: 127.0.0.1:35274 ready
+[INFO 14:24:43] absl Connecting to: ws://127.0.0.1:41921/sc2api, attempt: 4, running: True
+ConnectHandler: Request from 127.0.0.1:37244 accepted
+ReadyHandler: 127.0.0.1:37244 ready
+[INFO 14:24:44] absl Connecting to: ws://127.0.0.1:39415/sc2api, attempt: 4, running: True
+ConnectHandler: Request from 127.0.0.1:36292 accepted
+[INFO 14:24:44] absl Connecting to: ws://127.0.0.1:42727/sc2api, attempt: 4, running: True
+ReadyHandler: 127.0.0.1:36292 ready
+ConnectHandler: Request from 127.0.0.1:39210 accepted
+ReadyHandler: 127.0.0.1:39210 ready
+[INFO 14:24:44] absl Connecting to: ws://127.0.0.1:39891/sc2api, attempt: 4, running: True
+[INFO 14:24:44] absl Connecting to: ws://127.0.0.1:33687/sc2api, attempt: 4, running: True
+ConnectHandler: Request from 127.0.0.1:43300 accepted
+ReadyHandler: 127.0.0.1:43300 ready
+ConnectHandler: Request from 127.0.0.1:34718 accepted
+ReadyHandler: 127.0.0.1:34718 ready
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Launching next game.
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Launching next game.
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Launching next game.
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Launching next game.
+Launching next game.
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 2
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 3
+Next launch phase started: 2
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 3
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Next launch phase started: 4
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Next launch phase started: 4
+Requesting to join a single player game
+Launching next game.
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Launching next game.
+Launching next game.
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Sending ResponseJoinGame
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+Game has started.
+Using default stable ids, none found at: /root/StarCraftII/stableid.json
+Successfully loaded stable ids: GameData\stableid.json
+Sending ResponseJoinGame
+/root/DRL-Final/pymarl2/src/components/episode_buffer.py:103: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:278.)
+  v = th.tensor(v, dtype=dtype, device=self.device)
+/root/DRL-Final/pymarl2/src/components/episode_buffer.py:103: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  v = th.tensor(v, dtype=dtype, device=self.device)
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+[DEBUG 14:24:59] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:24:59] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+[DEBUG 14:24:59] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:24:59] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:24:59] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 14:24:59] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+
+===== LLM PROMPT (Sending to API) =====
+===== LLM PROMPT (Sending to API) =====
+===== LLM PROMPT (Sending to API) =====
+===== LLM PROMPT (Sending to API) =====
+
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+
+
+
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.=======================================
+=======================================
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.[DEBUG 14:24:59] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+
+
+=======================================
+=======================================
+[DEBUG 14:24:59] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 14:24:59] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:24:59] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:24:59] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:24:59] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:24:59] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 14:24:59] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 14:24:59] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 14:24:59] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.250\\nrelative y : -0.025\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.275\\nrelative y : 0.000\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 14:25:01] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 485
+[DEBUG 14:25:01] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+[1, 4, 0]
+
+I'm ordering agents 0, 1, and 2 to stop (ID 1), move east (ID 4), and stop (ID 1) respectively. This will position them strategically to attack the enemy units in a coordinated manner.
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[4, 4, 2], Descriptions=['move_east', 'move_east', 'move_north']
+[DEBUG 14:25:03] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 677
+[DEBUG 14:25:03] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+A battle to be won!
+
+After analyzing the situation, I conclude that the best course of action is to advance all three Marines and engage the enemy.
+
+Here are my orders:
+
+[4, 4, 4]
+
+I've ordered each of my Marines (Units 0, 1, and 2) to move east (ID 4). This will position them to attack the enemy Marines, starting a battle that I'm confident we'll win with our combined forces.
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[3, 1, 4], Descriptions=['move_south', 'stop', 'move_east']
+[DEBUG 14:25:03] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 1024
+[DEBUG 14:25:03] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+After analyzing the current global state and the available actions for each unit, I decide to issue the following commands:
+
+[4, 2, 4]
+
+Here's why:
+
+* Unit 0 (ally #1): Since there are enemy Marines nearby (ENEMY #1) around the relative x-coordinate of 0.25, I choose "move_east" ID: 4 to approach and engage the enemy.
+* Unit 1 (ally #2): With no immediate threats nearby, I decide to "move_north" ID: 2 to get a better vantage point and survey the situation.
+* Unit 2 (ally #3): Following the same logic as for Unit 0, I also choose "move_east" ID: 4 to approach ENEMY #1 from a different angle.
+
+These actions aim to position my units for coordinated defense and potential counter-attacks against the enemy forces.
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[2, 4, 3], Descriptions=['move_north', 'move_east', 'move_south']
+[DEBUG 14:25:05] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 716
+[DEBUG 14:25:05] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+After analyzing the current global state, I've decided to issue the following orders:
+
+[4, 2, 4]
+
+Here's a brief explanation for each unit's order:
+
+* Unit 0: Move east (ID 4) to get closer to the enemy Marines and prepare for a potential engagement.
+* Unit 1: Move north (ID 2) to flank the enemy forces and surround them.
+* Unit 2: Move east (ID 4) to support Unit 0 and apply pressure on the enemy forces together.
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[2, 5, 2], Descriptions=['move_north', 'move_west', 'move_north']
+[DEBUG 14:25:05] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 587
+[DEBUG 14:25:05] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+Based on the current state and available actions, I will order my units to spread out and prepare for an attack.
+
+Here is the list of 3 action IDs:
+
+[4, 5, 2]
+
+I'm ordering Unit 0 (Agent 1) to move east (ID 4), Unit 1 (Agent 2) to move west (ID 5), and Unit 2 (Agent 3) to move north (ID 2).
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[5, 5, 3], Descriptions=['move_west', 'move_west', 'move_south']
+[DEBUG 14:25:06] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 524
+[DEBUG 14:25:06] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+LLM response:
+After analyzing the current global state, I've decided to issue the following orders:
+
+**Unit 0**: Move north (ID 2)
+**Unit 1**: Move east (ID 4)
+**Unit 2**: Move south (ID 3)
+
+Here is the formatted list of action IDs:
+[2, 4, 3]
+LLMAgent final selected actions: IDs=[2, 4, 3], Descriptions=['move_north', 'move_east', 'move_south']
+[DEBUG 14:25:07] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 776
+[DEBUG 14:25:07] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+After analyzing the situation, I've decided to give the following orders:
+
+[2, 2, 4]
+
+I want Unit 0 (Agent 1) to move north, trying to get closer to one of the enemy units (ENEMY #1). Unit 1 (Agent 2) will also move north, attempting to approach another enemy unit. Unit 2 (Agent 3) will move east, aiming to flank the enemy formation from the side.
+
+This positioning should put us in a good spot for engaging the enemies while minimizing potential weaknesses in our own defense.
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[4, 5, 2], Descriptions=['move_east', 'move_west', 'move_north']
+[DEBUG 14:25:08] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 799
+[DEBUG 14:25:08] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+After analyzing the current state and available actions, I decide to issue the following orders:
+
+[2, 4, 5]
+
+Here's a brief explanation for each unit:
+
+* Unit 0: Move north (ID 2) to get closer to the enemy forces.
+* Unit 1: Move east (ID 4) to reposition and prepare for potential engagement.
+* Unit 2: Move west (ID 5) to flank the enemy forces and catch them off guard.
+
+These orders seem to be a good starting point, taking into account the relative positions of our units and the enemy Marines.
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[2, 2, 1], Descriptions=['move_north', 'move_north', 'stop']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.210
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.040
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+[DEBUG 14:25:08] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:25:08] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.210\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.040\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : -0.024\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.234\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+
+===== LLM PROMPT (Sending to API) =====
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.040
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.185
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+
+=======================================
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.065
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.290
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.266
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+[DEBUG 14:25:08] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:25:08] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.040\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.185\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : -0.024\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.234\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 14:25:08] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:25:08] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.065\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.290\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.266\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : -0.024\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.234\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.210
+relative y : -0.027
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.253
+relative y : -0.036
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.185
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.220
+relative y : -0.038
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.040
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.245
+relative y : -0.024
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+[DEBUG 14:25:08] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:25:08] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.210\\nrelative y : -0.027\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.253\\nrelative y : -0.036\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.185\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : -0.024\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.234\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 14:25:08] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:25:08] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.220\\nrelative y : -0.038\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.040\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.245\\nrelative y : -0.024\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : -0.024\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.234\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.065
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.287
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.263
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.290
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.040
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : -0.040
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+[DEBUG 14:25:08] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:25:08] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:25:08] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.290\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.040\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : -0.040\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : -0.024\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.234\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 14:25:08] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.065\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.287\\nrelative y : 0.000\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.263\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : -0.024\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.234\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.065
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.214
+relative y : 0.002
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.222
+relative y : -0.039
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+[DEBUG 14:25:08] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:25:08] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.065\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.214\\nrelative y : 0.002\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.222\\nrelative y : -0.039\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.210\\nrelative y : -0.024\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.234\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 14:25:10] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 554
+[DEBUG 14:25:10] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+To take advantage of our numerical superiority, I'll focus on moving forward and engaging the enemy Marine units.
+
+Here is my response:
+
+[4, 4, 4]
+
+I've ordered each Marine unit to move east (action ID 4), positioning them to attack the enemy Marines head-on.
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[2, 2, 3], Descriptions=['move_north', 'move_north', 'move_south']
+[DEBUG 14:25:12] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 634
+[DEBUG 14:25:12] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+Based on the current situation, I want to position my marines to attack the enemy marines while minimizing their potential to harm me.
+
+Here are the orders:
+
+[4, 5, 2]
+
+These orders move unit 1 (agent 2) eastward to attack the enemy marine at ENEMY #3, move unit 0 westward to attack ENEMY #2, and move unit 2 northward to flank ENEMY #1.
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[4, 2, 2], Descriptions=['move_east', 'move_north', 'move_north']
+[DEBUG 14:25:13] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 1101
+[DEBUG 14:25:13] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+Based on the current global state, I can see that there are no enemy units nearby except for some Marines at a significant distance (approximately at coordinates x=0.210, y=-0.024 to x=0.234, y=0.001). The enemy units seem to be far enough from my Marine units, so it's safe to move them towards where the enemy units are expected to be.
+
+Here's the list of 3 action IDs for my units:
+[4, 4, 4]
+
+I'm ordering all three Marines to move east (ID 4) to converge on the location where the enemy units are expected to be. This will allow me to engage the enemy when they get closer and improve the chances of defeating them.
+Note: Stop command is not helpful in this scenario since we're trying to close the distance with the enemy units, while moving north, south or west doesn't seem relevant at this point.
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[3, 1, 1], Descriptions=['move_south', 'stop', 'stop']
+[DEBUG 14:25:14] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 546
+[DEBUG 14:25:14] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+[5, 4, 2]
+
+I've issued orders to:
+
+* Unit 0 (Agent 1) to move west (#5)
+* Unit 1 (Agent 2) to move east (#4)
+* Unit 2 (Agent 3) to move north (#2)
+
+These actions aim to spread out the units and create some distance between them and the enemy units.
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[5, 4, 2], Descriptions=['move_west', 'move_east', 'move_north']
+[DEBUG 14:25:14] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 407
+[DEBUG 14:25:14] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+LLM response:
+**Unit 0:** Stop (ID 1)
+**Unit 1:** Move South (ID 3)
+**Unit 2:** Move East (ID 4)
+
+List of action IDs: [1, 3, 4]
+LLMAgent final selected actions: IDs=[1, 3, 4], Descriptions=['stop', 'move_south', 'move_east']
+[DEBUG 14:25:17] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 793
+[DEBUG 14:25:17] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+After analyzing the global state, I decide to issue the following orders:
+
+* Unit 0: **ID 2** (move_north) - Move closer to the enemy Marines and prepare for engagement.
+* Unit 1: **ID 4** (move_east) - Realign with Unit 0 and get into position to attack the southern enemy Marine from a flanking route.
+* Unit 2: **ID 3** (move_south) - Move towards the enemy Marines that are closest to you, creating a potential pincer movement with Unit 0.
+
+Here is the list of action IDs:
+```
+[2, 4, 3]
+```
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[4, 5, 1], Descriptions=['move_east', 'move_west', 'stop']
+[DEBUG 14:25:17] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 891
+[DEBUG 14:25:17] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+After analyzing the current global state, I've decided to order my units as follows:
+
+[4, 1, 2]
+
+Here's a brief explanation for each unit:
+
+* Unit 0: Since our ally is relatively far from the enemy marines, I'll order it to move east (Action ID 4) to get closer and prepare for an attack.
+* Unit 1: As Unit 0 doesn't have a clear target yet, I'll instruct Unit 1 to simply stop (Action ID 1). This will prevent any unnecessary movement or squandering of positioning benefits.
+* Unit 2: With its location relatively central, I'll order it to move north (Action ID 2) and support the formation.
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[2, 3, 1], Descriptions=['move_north', 'move_south', 'stop']
+[DEBUG 14:25:19] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 695
+[DEBUG 14:25:19] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+After analyzing the current global state, I've decided to issue the following orders:
+
+-- Unit 0 --
+Action ID: 4 (move_east)
+
+-- Unit 1 --
+Action ID: 2 (move_north)
+
+-- Unit 2 --
+Action ID: 4 (move_east)
+
+Here's the formatted list of action IDs for my units:
+
+[4, 2, 4]
+
+These orders seem to be a good starting point to get my marines moving and positioned to engage with the enemy forces.
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[5, 4, 2], Descriptions=['move_west', 'move_east', 'move_north']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.210
+relative y : 0.013
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.253
+relative y : -0.036
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.185
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.239
+relative y : -0.031
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.290
+relative y : -0.040
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.265
+relative y : -0.039
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+[DEBUG 14:25:19] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.210
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.040
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+[DEBUG 14:25:19] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.210\\nrelative y : 0.013\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.253\\nrelative y : -0.036\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.185\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : -0.023\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.194\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.210
+relative y : -0.065
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.251
+relative y : 0.002
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.259
+relative y : -0.039
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+[DEBUG 14:25:19] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:25:19] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.239\\nrelative y : -0.031\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.290\\nrelative y : -0.040\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.265\\nrelative y : -0.039\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : -0.023\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.194\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.065
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.205
+relative y : 0.016
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.223
+relative y : -0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+[DEBUG 14:25:19] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.220
+relative y : 0.002
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.290
+relative y : 0.040
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.245
+relative y : -0.024
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+[DEBUG 14:25:19] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.210\\nrelative y : -0.025\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.040\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : -0.023\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.194\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 14:25:19] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:25:19] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.210\\nrelative y : -0.065\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.251\\nrelative y : 0.002\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.259\\nrelative y : -0.039\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : -0.023\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.194\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 14:25:19] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:25:19] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.065\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.205\\nrelative y : 0.016\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.223\\nrelative y : -0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : -0.023\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.194\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 14:25:19] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:25:19] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.220\\nrelative y : 0.002\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.290\\nrelative y : 0.040\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.245\\nrelative y : -0.024\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : -0.023\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.194\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+
+===== LLM PROMPT (Sending to API) =====
+===== LLM PROMPT (Sending to API) =====
+
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.065
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.080
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.254
+relative y : -0.016
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.210
+relative y : 0.040
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.264
+relative y : -0.046
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+
+=======================================
+=======================================
+[DEBUG 14:25:19] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:25:19] openai message='Request to OpenAI API' method=post path=http://localhost:11434/v1/chat/completions
+[DEBUG 14:25:19] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.254\\nrelative y : -0.016\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.210\\nrelative y : 0.040\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.264\\nrelative y : -0.046\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : -0.023\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.194\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 14:25:19] openai api_version=None data='{"model": "llama3:latest", "messages": [{"role": "user", "content": "You are an AI agent controlling 3 units in a StarCraft II scenario.\\nYour objective is to defeat all enemy units by issuing commands to your units.\\n--- CURRENT GLOBAL STATE ---\\nALLY #1:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : -0.065\\nunit type : Marine\\nALLY #2:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.250\\nrelative y : 0.080\\nunit type : Marine\\nALLY #3:\\nhealth : 100.0%\\nweapon cooldown : 0.0%\\nrelative x : -0.225\\nrelative y : 0.000\\nunit type : Marine\\nENEMY #1:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : 0.001\\nunit type : Marine\\nENEMY #2:\\nhealth : 100.0%\\nrelative x : 0.170\\nrelative y : -0.023\\nunit type : Marine\\nENEMY #3:\\nhealth : 100.0%\\nrelative x : 0.194\\nrelative y : 0.001\\nunit type : Marine\\n\\n--- ORDERS FOR YOUR UNITS ---\\nFor each of your 3 units, select one action from its list of available actions.\\nIn the last line respond with a formatted list of integer action IDs, one for each unit.\\nFor example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]\\nMake sure the action ID given to each agent is available for each agent.\\n-- Unit 0 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 1 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\n-- Unit 2 --\\nAvailable Actions (ID: Description):\\n - ID 1: stop\\n - ID 2: move_north\\n - ID 3: move_south\\n - ID 4: move_east\\n - ID 5: move_west\\n\\nBased on the state and available actions, provide the list of 3 action IDs for your units."}]}' message='Post details'
+[DEBUG 14:25:21] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 814
+[DEBUG 14:25:21] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+After analyzing the current global state and available actions for each unit, I decide to issue the following orders:
+
+**[2, 5, 4]**
+
+Here's my reasoning:
+
+* Unit 0 will move north (ID 2) to get closer to Enemy #1.
+* Unit 1 will move west (ID 5) to flank Enemy #1 and disrupt its defense.
+* Unit 2 will move east (ID 4) to attack Enemy #3 from a different angle.
+
+These orders aim to position my units to take advantage of their positions relative to the enemy and set up potential ambushes or flanking maneuvers.
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[2, 3, 4], Descriptions=['move_north', 'move_south', 'move_east']
+[DEBUG 14:25:22] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 818
+[DEBUG 14:25:22] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+After analyzing the current global state, I've decided to issue the following orders:
+
+[2, 4, 3]
+
+Here's my reasoning:
+
+* Unit 0: Since Unit 0 is relatively closer to the enemy forces, I'll order it to move north (ID 2) to get into a better position to engage the enemy.
+* Unit 1: With its current position, moving east (ID 4) will allow Unit 1 to flank the enemy and catch them off guard.
+* Unit 2: Moving south (ID 3) will bring Unit 2 closer to the central battlefield, allowing it to support both Unit 0 and Unit 1.
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[4, 4, 1], Descriptions=['move_east', 'move_east', 'stop']
+[DEBUG 14:25:24] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 795
+[DEBUG 14:25:24] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+After analyzing the current state, I've decided to issue the following orders:
+
+**[2, 3, 2]**
+
+This means:
+
+* Unit 0 (Marine) will move south (**ID 3**).
+* Unit 1 (Marine) will move south (**ID 3**).
+* Unit 2 (Marine) will move south (**ID 3**) as well.
+
+My reasoning is that all enemy units are located north or east of our Marines, so trying to get closer to the enemies and put pressure on them. Moving south should help us achieve this while also keeping our Marines somewhat evenly spaced.
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[3, 5, 5], Descriptions=['move_south', 'move_west', 'move_west']
+[DEBUG 14:25:25] urllib3.connectionpool http://localhost:11434 "POST /v1/chat/completions HTTP/11" 200 889
+[DEBUG 14:25:25] openai message='OpenAI API response' path=http://localhost:11434/v1/chat/completions processing_ms=None request_id=None response_code=200
+無法從 LLM 回應中解析動作列表。回應內容：
+After analyzing the situation, I decide to issue the following orders:
+
+[2, 5, 4]
+
+Here's my reasoning:
+
+* Unit 0 (agent 1) is slightly behind the others in terms of x-coordinate. I order it to move east (ID 4) to catch up with the other two agents.
+* Unit 1 (agent 2) is a bit ahead and already far from the enemy units. I order it to move west (ID 5) to adjust its position and get closer to the others.
+* Unit 2 (agent 3) seems to be in a good spot, so I order it to move east (ID 4) as well to maintain formation and potential advantage over the enemy.
+
+Let me know what happens next!
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[5, 1, 2], Descriptions=['move_west', 'stop', 'move_north']

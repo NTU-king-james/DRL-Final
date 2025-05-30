@@ -1,0 +1,52 @@
+# --- QMIX Fast Training Configuration for 3m ---
+# Optimized for faster convergence on 3m map
+
+# Action selector with faster exploration decay
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 50000  # Reduced from 100000 for faster exploration
+
+# Parallel runner with optimized batch sizes
+runner: "parallel"
+batch_size_run: 4  # Reduced from 8 for better sample efficiency
+buffer_size: 2500  # Reduced from 5000 for faster turnover
+batch_size: 64     # Reduced from 128 for more frequent updates
+
+# Training settings
+t_max: 2000000     # Reduced from 10050000 for faster experimentation
+
+# More frequent target network updates for faster convergence
+target_update_interval: 100  # Reduced from 200
+
+# Network architecture
+mac: "n_mac"
+agent: "n_rnn"
+agent_output_type: q
+rnn_hidden_dim: 64
+
+# Learner and mixer
+learner: "nq_learner"
+mixer: "qmix"
+mixing_embed_dim: 32
+hypernet_embed: 64
+
+# Optimized hyperparameters for speed
+lr: 0.003          # Increased from 0.001 for faster learning
+td_lambda: 0.4     # Reduced from 0.6 for faster convergence
+optimizer: 'adam'
+grad_norm_clip: 10
+q_lambda: False
+
+# Training optimizations
+use_layer_norm: False
+use_orthogonal: False
+gain: 0.01
+
+# Priority experience replay disabled for simplicity
+use_per: False
+per_alpha: 0.6
+per_beta: 0.4
+return_priority: False
+
+name: "qmix_3m_fast"

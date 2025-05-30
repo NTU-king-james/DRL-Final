@@ -23,7 +23,7 @@ def get_action_description(action_id, n_total_actions):
     return f"action_id_{action_id}"
 
 class LLMAgent:
-    def __init__(self, model_name="llama2", verbose=False):
+    def __init__(self, model_name="llama3:latest", verbose=False):
         self.model_name = model_name
         self.verbose = verbose
         openai.api_base = 'http://127.0.0.1:11434/v1' # test with ollama
@@ -88,8 +88,12 @@ class LLMAgent:
             if self.verbose:
                 print(f"LLM response:\n{llm_output_str}")
             return eval(action)
-        except:
-            print("Parse action error!\nLLM output:",llm_output_str)
+        except Exception as e:
+            llm_output_str = locals().get('llm_output_str', None)
+            if llm_output_str is not None:
+                print("Parse action error!\nLLM output:", llm_output_str)
+            else:
+                print("Parse action error! No LLM output. Exception:", e)
             return []
     
     

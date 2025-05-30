@@ -1,0 +1,99 @@
+{
+  "artifacts": [],
+  "command": "my_main",
+  "experiment": {
+    "base_dir": "/root/DRL-Final/pymarl2/src",
+    "dependencies": [
+      "numpy==1.24.4",
+      "PyYAML==6.0.2",
+      "sacred==0.8.7",
+      "torch==2.4.1"
+    ],
+    "mainfile": "main.py",
+    "name": "pymarl",
+    "repositories": [
+      {
+        "commit": "3423bfb5e3d88c024810c2e2146f75468b2ff01f",
+        "dirty": true,
+        "url": "https://github.com/NTU-king-james/DRL-Final.git"
+      },
+      {
+        "commit": "3423bfb5e3d88c024810c2e2146f75468b2ff01f",
+        "dirty": true,
+        "url": "https://github.com/NTU-king-james/DRL-Final.git"
+      }
+    ],
+    "sources": [
+      [
+        "main.py",
+        "_sources/main_948d738a1e5f7eebcb1c8889961b5a91.py"
+      ],
+      [
+        "utils/logging.py",
+        "_sources/logging_ce9a261c391cbeae67129d3d806d06da.py"
+      ]
+    ]
+  },
+  "heartbeat": "2025-05-26T19:22:02.056850",
+  "host": {
+    "ENV": {},
+    "cpu": "AMD EPYC 7302P 16-Core Processor",
+    "gpus": {
+      "driver_version": "535.129.03",
+      "gpus": [
+        {
+          "model": "NVIDIA GeForce RTX 3070",
+          "persistence_mode": true,
+          "total_memory": 8192
+        }
+      ]
+    },
+    "hostname": "de8e657e-78a6-465f-947e-5258d2d201b3-6d5d66b66b-zns4d",
+    "os": [
+      "Linux",
+      "Linux-5.15.0-92-generic-x86_64-with-glibc2.17"
+    ],
+    "python_version": "3.8.20"
+  },
+  "meta": {
+    "command": "my_main",
+    "config_updates": {
+      "env_args": {
+        "map_name": "3m"
+      }
+    },
+    "named_configs": [],
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--id": null,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "env_args.map_name=3m"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2025-05-26T15:05:53.907492",
+  "status": "RUNNING"
+}

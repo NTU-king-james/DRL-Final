@@ -25,6 +25,16 @@ from s2clientprotocol import debug_pb2 as d_pb
 from llm.test_llm import LLMAgent
 from llm.translate import get_state_NL
 
+# QMIX network imports for LLM-QMIX collaboration
+try:
+    from modules.mixers.qmix import QMixer
+    from modules.mixers.vdn import VDNMixer
+    from learners.q_learner import QLearner
+    QMIX_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: QMIX modules not available: {e}")
+    QMIX_AVAILABLE = False
+
 races = {
     "R": sc_common.Random,
     "P": sc_common.Protoss,
@@ -743,6 +753,9 @@ class StarCraft2Env(MultiAgentEnv):
                 for agent_id in range(self.n_agents):
                     agent_action = np.argmax(self.last_action[agent_id])
                     # Check if agent_action matches the LLM instruction for this agent
+                    print(f"Agent {agent_id} action: {agent_action}, past instruction: {past_instruction[agent_id]}")
+                    # If the agent's action matches the past instruction, give a reward
+                    # Note: past_instruction is expected to be a list or array of actions
                     if agent_action == past_instruction[agent_id]:
                         alignment_reward += 1.0
             reward += self.icm_weights * alignment_reward 

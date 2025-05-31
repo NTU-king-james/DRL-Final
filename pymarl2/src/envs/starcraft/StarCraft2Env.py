@@ -107,6 +107,7 @@ class StarCraft2Env(MultiAgentEnv):
         heuristic_ai=False,
         heuristic_rest=False,
         debug=False,
+        alignment_weight=0.1,
     ):
         """
         Create a StarCraftC2Env environment.
@@ -203,6 +204,9 @@ class StarCraft2Env(MultiAgentEnv):
         debug: bool, optional
             Log messages about observations, state, actions and rewards for
             debugging purposes (default is False).
+        alignment_weight: float, optional
+            Weight for LLM alignment reward (default is 0.1). When set to 0.0,
+            LLM agent is disabled for pure QMIX baseline mode.
         """
         # Map arguments
         self.map_name = map_name
@@ -249,6 +253,7 @@ class StarCraft2Env(MultiAgentEnv):
         self.window_size = (window_size_x, window_size_y)
         self.replay_dir = replay_dir
         self.replay_prefix = replay_prefix
+        self.alignment_weight = alignment_weight
 
         # Actions
         self.n_actions_no_attack = 6
@@ -300,10 +305,14 @@ class StarCraft2Env(MultiAgentEnv):
         # Try to avoid leaking SC2 processes on shutdown
         atexit.register(lambda: self.close())
 
-        # llm_agent
-        self.llm_agent = LLMAgent(verbose='False')
-        # LLM instruction history (deque of last 3)
-        self.llm_instruction_history = deque(maxlen=3)
+        # LLM agent (only initialize if alignment_weight > 0)
+        if self.alignment_weight > 0.0:
+            self.llm_agent = LLMAgent(verbose='False')
+            # LLM instruction history (deque of last 3)
+            self.llm_instruction_history = deque(maxlen=3)
+        else:
+            self.llm_agent = None
+            self.llm_instruction_history = None
         self.icm_weights = 0.1
         
 
@@ -439,8 +448,8 @@ class StarCraft2Env(MultiAgentEnv):
             self._controller.step(self._step_mul)
             # Observe here so that we know if the episode is over.
             self._obs = self._controller.observe()
-            # === Get LLM instruction after agent actions ===
-            if self.llm_agent is not None:
+            # === Get LLM instruction after agent actions (only if alignment_weight > 0) ===
+            if self.llm_agent is not None and self.alignment_weight > 0.0:
                 obs = self.get_obs()
                 global_state_nl, avail_actions_list, n_agents, env_info = self.get_llm_inputs()
                 llm_instruction = self.llm_agent.act(global_state_nl, avail_actions_list, n_agents, env_info)
@@ -747,7 +756,7 @@ class StarCraft2Env(MultiAgentEnv):
             reward = delta_enemy + delta_deaths - delta_ally
 
         # --- Alignment reward with LLM instruction history ---
-        if hasattr(self, "llm_instruction_history"):
+        if hasattr(self, "llm_instruction_history") and self.llm_instruction_history is not None:
             alignment_reward = 0.0
             for past_instruction in self.llm_instruction_history:
                 for agent_id in range(self.n_agents):

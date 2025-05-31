@@ -2,6 +2,9 @@ from envs import REGISTRY as env_REGISTRY
 from functools import partial
 from components.episode_buffer import EpisodeBatch
 import numpy as np
+import os
+import json
+from datetime import datetime
 
 
 class EpisodeRunner:
@@ -25,6 +28,10 @@ class EpisodeRunner:
 
         # Log the first run
         self.log_train_stats_t = -1000000
+        
+        # Episode reward tracking for training progress
+        self.all_episode_rewards = []
+        self.episode_count = 0
 
     def setup(self, scheme, groups, preprocess, mac):
         self.new_batch = partial(EpisodeBatch, scheme, groups, self.batch_size, self.episode_limit + 1,
@@ -103,6 +110,13 @@ class EpisodeRunner:
 
         if not test_mode:
             self.t_env += self.t
+            # Track episode rewards for training progress
+            self.all_episode_rewards.append(episode_return)
+            self.episode_count += 1
+            
+            # Save episode rewards periodically (every 10 episodes)
+            if self.episode_count % 10 == 0:
+                self.save_episode_rewards_to_file()
 
         cur_returns.append(episode_return)
 
@@ -115,6 +129,40 @@ class EpisodeRunner:
             self.log_train_stats_t = self.t_env
 
         return self.batch
+
+    def save_episode_rewards_to_file(self):
+        """Save episode rewards data to ablation_results directory."""
+        # Create ablation_results directory if it doesn't exist
+        results_dir = "ablation_results"
+        os.makedirs(results_dir, exist_ok=True)
+        
+        # Determine config name based on args
+        config_name = getattr(self.args, 'name', 'pymarl2_training')
+        if hasattr(self.args, 'env_args') and 'map_name' in self.args.env_args:
+            config_name += f"_{self.args.env_args['map_name']}"
+        
+        # Create data structure
+        reward_data = {
+            "config_name": config_name,
+            "episode_rewards": self.all_episode_rewards,
+            "total_episodes": self.episode_count,
+            "alignment_weight": getattr(self.args, 'alignment_weight', 0.0),
+            "llm_type": getattr(self.args, 'llm_type', 'none'),
+            "algo_type": getattr(self.args, 'learner', 'unknown'),
+            "created_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "average_reward": sum(self.all_episode_rewards) / len(self.all_episode_rewards) if self.all_episode_rewards else 0,
+            "min_reward": min(self.all_episode_rewards) if self.all_episode_rewards else 0,
+            "max_reward": max(self.all_episode_rewards) if self.all_episode_rewards else 0,
+            "last_10_avg": sum(self.all_episode_rewards[-10:]) / min(10, len(self.all_episode_rewards)) if self.all_episode_rewards else 0
+        }
+        
+        # Save to file
+        file_path = f"{results_dir}/{config_name}_episode_rewards.json"
+        with open(file_path, 'w') as f:
+            json.dump(reward_data, f, indent=2)
+        
+        print(f"📊 Episode rewards saved to: {file_path} (Episodes: {self.episode_count})")
+        return file_path
 
     def _log(self, returns, stats, prefix):
         self.logger.log_stat(prefix + "return_mean", np.mean(returns), self.t_env)

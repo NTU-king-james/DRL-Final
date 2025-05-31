@@ -4,6 +4,9 @@ from components.episode_buffer import EpisodeBatch
 from multiprocessing import Pipe, Process
 import numpy as np
 import torch as th
+import os
+import json
+from datetime import datetime
 
 
 # Based (very) heavily on SubprocVecEnv from OpenAI Baselines
@@ -42,6 +45,9 @@ class ParallelRunner:
         self.test_stats = {}
 
         self.log_train_stats_t = -100000
+
+        # Episode reward tracking
+        self.episode_rewards = []
 
     def setup(self, scheme, groups, preprocess, mac):
         self.new_batch = partial(EpisodeBatch, scheme, groups, self.batch_size, self.episode_limit + 1,

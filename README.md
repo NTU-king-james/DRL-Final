@@ -39,7 +39,7 @@ bash install_dependencies.sh
    ollama serve
    ```
 
-   
+
 ### Map Installation
 
 1. Install PySC2
@@ -90,9 +90,7 @@ python train.py --llm random --algo qmix --alignment-weight 0.5
 python run_full_ablation.py
 ```
 
-## 📊 Results
 
-You can see the results of the experiments in the `ablation_results` directory.
 
 ## 📄 Command Line Arguments
 
@@ -109,6 +107,9 @@ You can see the results of the experiments in the `ablation_results` directory.
 | `--save-replay` | flag | `False` | Save game replays |
 | `--seed` | int | `0` | Random seed |
 
+## 📊 Results
+
+You can see the results of the experiments in the `ablation_results` directory.
 
 ## 📚 Notes
 

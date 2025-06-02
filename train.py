@@ -713,6 +713,9 @@ class QMIXAgent:
         
         import os
         
+        # Create ablation_results main directory if it doesn't exist
+        os.makedirs("ablation_results", exist_ok=True)
+        
         # Create weights directory path based on ablation study config
         weights_dir = f"ablation_results/{config_name}/weights"
         os.makedirs(weights_dir, exist_ok=True)
@@ -1411,6 +1414,9 @@ def save_episode_rewards(config_name, episode_rewards, total_episodes, alignment
     """Save episode rewards data to ablation_results directory organized by configuration."""
     import os
     from datetime import datetime
+    
+    # Create ablation_results main directory if it doesn't exist
+    os.makedirs("ablation_results", exist_ok=True)
     
     # Create config-specific directory within ablation_results
     config_dir = f"ablation_results/{config_name}"

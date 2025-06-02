@@ -13,7 +13,7 @@ This project implements and evaluates a novel QMIX+LLM collaborative framework w
 ```bash
 # Clone repository
 git clone https://github.com/NTU-king-james/DRL-Final.git
-cd qmix-llm
+cd DRL-Final
 
 # Setup environment
 conda create -n pysc2-env python=3.8
@@ -22,10 +22,6 @@ conda activate pysc2-env
 # Install requirements
 pip install -r requirements.txt
 
-# Install StarCraft II dependencies, in pymarl2
-cd pymarl2
-bash install_sc2.sh
-bash install_dependencies.sh
 ```
 ### Ollama Setup
 1. Install [Ollama](https://ollama.com/docs/installation)

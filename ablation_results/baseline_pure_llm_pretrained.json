@@ -1,0 +1,16 @@
+{
+  "config_name": "baseline_pure_llm_pretrained",
+  "config": {
+    "llm": "llama3",
+    "algo": "none",
+    "alignment_weight": 0.0,
+    "mode": "train",
+    "description": "Pure LLM Execution (pre-trained llama3:latest)"
+  },
+  "command": "bash -c source /root/miniconda3/etc/profile.d/conda.sh && conda activate pysc2-env && cd /root/DRL-Final && python test_llm.py --llm llama3 --algo none --alignment-weight 0.0 --map 3m --episodes 100 --max-steps 100 --seed 42 --verbose",
+  "return_code": -1,
+  "duration_seconds": 1800.049375295639,
+  "start_time": "2025-06-01 08:13:04",
+  "success": false,
+  "error": "Timeout after 30 minutes"
+}

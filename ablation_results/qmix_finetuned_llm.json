@@ -1,0 +1,14 @@
+{
+  "config_name": "qmix_finetuned_llm",
+  "config": {
+    "llm": "ours",
+    "algo": "qmix",
+    "alignment_weight": 0.1,
+    "description": "QMIX + Fine-tuned LLM Guidance (MAIN EXPERIMENT)"
+  },
+  "command": "/root/miniconda3/envs/pysc2-env/bin/python test_llm.py --llm ours --algo qmix --alignment-weight 0.1 --map 3m --episodes 100 --max-steps 100 --seed 42 --verbose",
+  "return_code": 0,
+  "duration_seconds": 257.9297058582306,
+  "start_time": "2025-05-31 14:37:59",
+  "success": true
+}

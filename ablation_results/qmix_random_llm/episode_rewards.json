@@ -1,0 +1,19 @@
+{
+  "config_name": "qmix_random_llm",
+  "episode_rewards": [
+    1.3150684931506849
+  ],
+  "total_episodes": 1,
+  "alignment_weight": 0.1,
+  "llm_type": "random",
+  "algo_type": "qmix",
+  "created_time": "2025-06-01 13:21:07",
+  "average_reward": 1.3150684931506849,
+  "min_reward": 1.3150684931506849,
+  "max_reward": 1.3150684931506849,
+  "win_rate": 0.0,
+  "total_wins": 0,
+  "battle_outcomes": [
+    false
+  ]
+}

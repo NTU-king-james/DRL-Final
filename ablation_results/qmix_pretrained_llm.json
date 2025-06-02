@@ -1,0 +1,16 @@
+{
+  "config_name": "qmix_pretrained_llm",
+  "config": {
+    "llm": "llama3",
+    "algo": "qmix",
+    "alignment_weight": 0.5,
+    "mode": "train",
+    "description": "QMIX + Pre-trained LLM Guidance"
+  },
+  "command": "bash -c source /root/miniconda3/etc/profile.d/conda.sh && conda activate pysc2-env && cd /root/DRL-Final && python test_llm.py --llm llama3 --algo qmix --alignment-weight 0.5 --map 3m --episodes 100 --max-steps 100 --seed 42 --verbose",
+  "return_code": -1,
+  "duration_seconds": 1800.1155264377594,
+  "start_time": "2025-06-01 08:59:04",
+  "success": false,
+  "error": "Timeout after 30 minutes"
+}

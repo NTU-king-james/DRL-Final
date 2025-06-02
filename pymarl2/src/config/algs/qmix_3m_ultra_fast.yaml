@@ -1,0 +1,52 @@
+# --- QMIX Ultra-Fast Training Configuration for 3m ---
+# Aggressive optimization for maximum training speed
+
+# Action selector with very fast exploration decay
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.1    # Higher final epsilon for continued exploration
+epsilon_anneal_time: 25000  # Very fast exploration decay
+
+# Parallel runner with minimal batch sizes for maximum throughput
+runner: "parallel"
+batch_size_run: 2   # Minimal batch size for maximum parallelism
+buffer_size: 1500   # Small buffer for fast turnover
+batch_size: 32      # Small batch for frequent updates
+
+# Short training for quick experimentation
+t_max: 500000      # Very short for rapid testing
+
+# Very frequent target network updates
+target_update_interval: 50  # Very frequent updates
+
+# Compact network architecture
+mac: "n_mac"
+agent: "n_rnn"
+agent_output_type: q
+rnn_hidden_dim: 32  # Reduced from 64 for faster computation
+
+# Learner and mixer
+learner: "nq_learner"
+mixer: "qmix"
+mixing_embed_dim: 16  # Reduced from 32
+hypernet_embed: 32    # Reduced from 64
+
+# Aggressive hyperparameters for speed
+lr: 0.005           # High learning rate for fast convergence
+td_lambda: 0.2      # Low td_lambda for immediate updates
+optimizer: 'adam'
+grad_norm_clip: 5   # Lower clip for more aggressive updates
+q_lambda: False
+
+# Training optimizations
+use_layer_norm: False
+use_orthogonal: False
+gain: 0.01
+
+# No priority experience replay
+use_per: False
+per_alpha: 0.6
+per_beta: 0.4
+return_priority: False
+
+name: "qmix_3m_ultra_fast"

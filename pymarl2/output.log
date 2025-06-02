@@ -1,0 +1,2544 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.8.20)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+No module named 'gfootball'
+Mixer Size: 
+17.761K
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+成功連接到 Ollama API
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the situation, I decide to order my agents as follows:
+
+[4, 4, 1]
+
+Here's what each agent is doing:
+
+* Agent 0 (Unit 2): Move east (ID 4) to position itself closer to an enemy unit and prepare for future actions.
+* Agent 1 (Unit 1): Move east (ID 4) to spread out from the other units and potentially flank the enemy forces.
+* Agent 0 (Unit 0): Stop (ID 1) to maintain its current position and observe the situation, as it's already closest to an enemy unit.
+Extracted action string content: 4, 4, 1
+LLMAgent final selected actions: IDs=[4, 4, 1], Descriptions=['move_east', 'move_east', 'stop']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.065
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.210
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.185
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+[1, 4, 5]
+Extracted action string content: 1, 4, 5
+LLMAgent final selected actions: IDs=[1, 4, 5], Descriptions=['stop', 'move_east', 'move_west']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.065
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.210
+relative y : 0.040
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.185
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the current global state, I'll issue orders to my units.
+
+**Orders**
+
+For Unit 0 (Marine): **2** (move_north)
+For Unit 1 (Marine): **4** (move_east)
+For Unit 2 (Marine): **3** (move_south)
+
+The idea is to spread out my units and create some distance between them. By moving north, east, and south, I'm increasing the chances of catching an enemy unit off guard and avoiding potential collisions.
+
+Here's the formatted list:
+[2, 4, 3]
+Extracted action string content: 2, 4, 3
+LLMAgent final selected actions: IDs=[2, 4, 3], Descriptions=['move_north', 'move_east', 'move_south']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.170
+relative y : 0.040
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.185
+relative y : -0.040
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.129
+relative y : 0.002
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.129
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.154
+relative y : 0.002
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the current global state, I decide to take the following actions:
+
+[2, 5, 4]
+
+These commands will position my Marines to encircle the enemy Marines and prepare for an attack. Unit 0 will move north, Unit 1 will move west, and Unit 2 will move east. This formation should allow us to attack the enemy units simultaneously from multiple angles.
+Extracted action string content: 2, 5, 4
+LLMAgent final selected actions: IDs=[2, 5, 4], Descriptions=['move_north', 'move_west', 'move_east']
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+成功連接到 Ollama API
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the scenario, I've decided to issue the following orders to my units:
+
+-- [2, 1, 4] --
+Extracted action string content: 2, 1, 4
+LLMAgent final selected actions: IDs=[2, 1, 4], Descriptions=['move_north', 'stop', 'move_east']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.210
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.290
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+Based on the current state and available actions, I will order my units as follows:
+
+[2, 4, 2]
+
+This means that unit 0 (Marine) will move north (ID 2), unit 1 (Marine) will move east (ID 4), and unit 2 (Marine) will also move north (ID 2).
+Extracted action string content: 2, 4, 2
+LLMAgent final selected actions: IDs=[2, 4, 2], Descriptions=['move_north', 'move_east', 'move_north']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.210
+relative y : 0.016
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.290
+relative y : 0.040
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.266
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the current situation, I decide to issue the following orders:
+
+* Unit 0: [2] (move_north)
+* Unit 1: [4] (move_east)
+* Unit 2: [5] (move_west)
+
+This will position my marines in a way that allows them to engage with the enemy units more effectively. The movement commands should also create some distance between my units, making it harder for the enemies to gang up on any single marine.
+
+Output format:
+[0, 1, 5]
+
+Please note that these orders are based on a simplified understanding of the situation and the available actions. In real-world scenarios, AI agents like myself would likely use more complex decision-making processes and take into account factors such as enemy positions, unit types, and environmental constraints.
+Extracted action string content: 2
+LLMAgent Warning: Action list length mismatch
+LLMAgent final selected actions: IDs=[4, 1, 5], Descriptions=['move_east', 'stop', 'move_west']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.016
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.330
+relative y : 0.040
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.267
+relative y : -0.002
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.129
+relative y : 0.002
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.129
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.154
+relative y : 0.002
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the current global state, I've decided to issue the following orders:
+
+[2, 2, 2]
+
+These orders tell Unit 0 to move north, Unit 1 to move north as well, and Unit 2 to also move north. This will help me to align my units in preparation for an attack on the enemy units.
+Extracted action string content: 2, 2, 2
+LLMAgent final selected actions: IDs=[2, 2, 2], Descriptions=['move_north', 'move_north', 'move_north']
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+成功連接到 Ollama API
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the current global state and available actions, I decide to issue the following orders:
+
+[4, 2, 4]
+
+For Unit 0 (Agent 0), I order it to move east (ID 4), which will allow me to separate it from the enemy units.
+
+For Unit 1 (Agent 1), I order it to move north (ID 2), which will give me a better position to attack or defend, and also put some distance between itself and the enemy units.
+
+For Unit 2 (Agent 2), I order it to move east (ID 4) as well, to mirror the movement of Agent 0 and create a pincer movement that could compromise the enemies' positioning.
+Extracted action string content: 4, 2, 4
+LLMAgent final selected actions: IDs=[4, 2, 4], Descriptions=['move_east', 'move_north', 'move_east']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.251
+relative y : 0.010
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.289
+relative y : 0.006
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : -0.040
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the current global state and the available actions for each unit, I've decided to issue the following orders:
+
+[2, 4, 5]
+
+Here's what I'm telling each unit to do:
+
+* Unit 0 (Agent 0): Move North (ID 2), as it seems to be relatively close to the enemy units. Maybe we can get a strategic high ground advantage!
+* Unit 1 (Agent 1): Move East (ID 4), in an attempt to flank and surround the enemy units.
+* Unit 2 (Agent 2): Move West (ID 5), also aiming to outmaneuver the opponent's forces.
+
+Let me know if these orders are executed successfully!
+Extracted action string content: 2, 4, 5
+LLMAgent final selected actions: IDs=[2, 4, 5], Descriptions=['move_north', 'move_east', 'move_west']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.247
+relative y : -0.024
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.329
+relative y : 0.006
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.265
+relative y : -0.040
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+Based on the provided information, I will issue the following orders to my marines:
+
+[2, 5, 4]
+
+This means that:
+
+- Agent 0 (marine) should move north.
+- Agent 1 (marine) should move west.
+- Agent 2 (marine) should move east.
+
+These orders are attempting to position my marines to engage with the enemy marines while minimizing potential losses.
+Extracted action string content: 2, 5, 4
+LLMAgent final selected actions: IDs=[2, 5, 4], Descriptions=['move_north', 'move_west', 'move_east']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.246
+relative y : -0.064
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.369
+relative y : 0.006
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.270
+relative y : -0.002
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.129
+relative y : 0.002
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.129
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.154
+relative y : 0.002
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+成功連接到 Ollama API
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the situation, I'll issue the following orders:
+
+[4, 2, 1]
+
+Here's the reasoning behind each order:
+
+* Unit 0 (Agent 0): I want it to move east to get closer to the enemy Marines and prepare for an attack. (Action ID: 4 - move_east)
+* Unit 1 (Agent 1): I'll order it to move north, as it's relatively far from the action zone. This will bring it closer to the other two units and allow them to coordinate their attacks. (Action ID: 2 - move_north)
+* Unit 2 (Agent 2): Given its position is quite close to one of the enemy Marines, I'll order it to stop and prepare for a potential attack on that Marine. (Action ID: 1 - stop)
+
+Let's see how this plays out!
+Extracted action string content: 4, 2, 1
+LLMAgent final selected actions: IDs=[4, 2, 1], Descriptions=['move_east', 'move_north', 'stop']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.213
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.188
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the situation, I'll issue the following orders:
+
+-- [0, 2, 4] --
+
+I'm ordering Unit 0 to move north (ID 2), Unit 1 to move east (ID 4), and Unit 2 to move east (ID 4) as well. This strategy aims to spread out our units and get them into a position to attack the enemy Marines.
+Extracted action string content: 0, 2, 4
+LLMAgent final selected actions: IDs=[2, 2, 4], Descriptions=['move_north', 'move_north', 'move_east']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.210
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.217
+relative y : 0.039
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.222
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the current global state and available actions, I've decided to issue the following orders:
+
+[2, 4, 5]
+
+I'm ordering Unit 0 (Agent 1) to move north (ID 2), which will position it to engage with the enemy forces more effectively. I'm ordering Unit 1 (Agent 2) to move east (ID 4), which will help to split the enemies and create an opportunity for coordinated attack. Finally, I'm ordering Unit 2 (Agent 3) to move west (ID 5), which will also contribute to splitting the enemy forces and preparing for a potential flanking maneuver.
+
+These orders aim to strategically reposition my units while maintaining their combat effectiveness, creating opportunities to engage with the enemies in a more advantageous manner.
+Extracted action string content: 2, 4, 5
+LLMAgent final selected actions: IDs=[2, 4, 5], Descriptions=['move_north', 'move_east', 'move_west']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.170
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.217
+relative y : 0.039
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.222
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.129
+relative y : 0.002
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.129
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.154
+relative y : 0.002
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+成功連接到 Ollama API
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the current global state, I decide to order my agents as follows:
+
+[4, 2, 4]
+
+* Agent 0 (Unit 1) will perform action ID 4, "move_east", which will position it closer to the enemy units.
+* Agent 1 (Unit 2) will perform action ID 2, "move_north", which will allow it to potentially attack one of the enemy units from a more advantageous position.
+* Agent 2 (Unit 3) will perform action ID 4, "move_east", similar to Agent 0, which will also position it closer to the enemy units.
+Extracted action string content: 4, 2, 4
+LLMAgent final selected actions: IDs=[4, 2, 4], Descriptions=['move_east', 'move_north', 'move_east']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.248
+relative y : 0.012
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.289
+relative y : 0.003
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.223
+relative y : 0.001
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the current position and available actions, I'll issue orders to achieve a strategic advantage.
+
+Here's my response:
+
+[4, 2, 1]
+
+Unit 0 is ordered to move east (ID 4), Unit 1 to move north (ID 2), and Unit 2 to stop in place (ID 1). This combination aims to get one unit closer to the enemy while keeping another as a reserve and maintaining the third as a distraction or potential backup.
+Extracted action string content: 4, 2, 1
+LLMAgent final selected actions: IDs=[4, 2, 1], Descriptions=['move_east', 'move_north', 'stop']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.288
+relative y : 0.012
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.329
+relative y : 0.003
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.183
+relative y : 0.001
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the situation, I've decided to issue the following orders:
+
+-- Unit 0 -- Move north (ID: 2)
+-- Unit 1 -- Move west (ID: 5)
+-- Unit 2 -- Move east (ID: 4)
+
+Here's the formatted list of action IDs:
+```
+[2, 5, 4]
+```
+Extracted action string content: 2, 5, 4
+LLMAgent final selected actions: IDs=[2, 5, 4], Descriptions=['move_north', 'move_west', 'move_east']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.327
+relative y : 0.017
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.299
+relative y : -0.010
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.223
+relative y : 0.001
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.129
+relative y : 0.002
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.129
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.154
+relative y : 0.002
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+成功連接到 Ollama API
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+[1, 5, 2]
+
+I'll order Unit 0 to stop (ID 1), Unit 1 to move west (ID 5), and Unit 2 to move north (ID 2). This positioning will allow us to potentially get into a good attacking position while also keeping our units' movements coordinated.
+Extracted action string content: 1, 5, 2
+LLMAgent final selected actions: IDs=[1, 5, 2], Descriptions=['stop', 'move_west', 'move_north']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.211
+relative y : -0.028
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.254
+relative y : -0.038
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.261
+relative y : 0.003
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the current situation, I will provide the following orders:
+
+[4, 4, 2]
+
+Here's my reasoning:
+
+* Unit 0 (Agent 0): Since its enemy is located mostly east/southeast from it, I'll order it to move east (ID 4) to get closer and potentially attack or harass.
+* Unit 1 (Agent 1): Same reason as Unit 0; I'll order it to also move east (ID 4).
+* Unit 2 (Agent 2): Its enemy is located mostly north/northwest from it, so I'll order it to move north (ID 2) to get closer and potentially attack or harass.
+
+These orders aim to position my units in a way that allows them to close the distance with their respective enemies.
+Extracted action string content: 4, 4, 2
+LLMAgent final selected actions: IDs=[4, 4, 2], Descriptions=['move_east', 'move_east', 'move_north']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.211
+relative y : -0.068
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.214
+relative y : -0.037
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.221
+relative y : 0.003
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+[1, 5, 2]
+
+I'm ordering each unit to perform the following actions:
+
+* Unit 0 (Agent 0): Stop (ID 1) - I want it to halt its movement.
+* Unit 1 (Agent 1): Move West (ID 5) - Since Unit 1 is currently at a relatively high x-coordinate, moving west will bring it closer to the rest of my units and potentially put pressure on the enemy marines.
+* Unit 2 (Agent 2): Move North (ID 2) - Moving north will position this unit in a way that could help defend against potential enemy movements and create a more flexible posture.
+Extracted action string content: 1, 5, 2
+LLMAgent final selected actions: IDs=[1, 5, 2], Descriptions=['stop', 'move_west', 'move_north']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.202
+relative y : -0.037
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.224
+relative y : -0.071
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.221
+relative y : 0.043
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.129
+relative y : 0.002
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.129
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.154
+relative y : 0.002
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+成功連接到 Ollama API
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the current situation, I've decided to issue the following orders:
+
+[4, 2, 1]
+
+Here's a brief explanation for each unit:
+
+* Unit 0 (Agent 1): Move eastward (ID 4) to close in on the enemy marines and potentially engage them.
+* Unit 1 (Agent 2): Move northward (ID 2) to create distance between itself and the adjacent enemy marine, reducing the risk of immediate attack while also setting up for potential flanking maneuvers or repositioning.
+* Unit 2 (Agent 3): Stop moving altogether (ID 1), conserving energy and maintaining a defensive stance near its current position.
+
+These orders aim to maintain a cautious approach while slowly advancing our advantage on the battlefield.
+Extracted action string content: 4, 2, 1
+LLMAgent final selected actions: IDs=[4, 2, 1], Descriptions=['move_east', 'move_north', 'stop']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.286
+relative y : -0.036
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.256
+relative y : -0.030
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.261
+relative y : 0.003
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+To attack the enemy marines, I will have my units move towards them. Here is the list of action IDs:
+
+[4, 4, 4]
+
+This means Unit 0 (Agent 1), Unit 1 (Agent 2), and Unit 2 (Agent 3) will all perform action ID 4, which is to move east, towards the enemy marines.
+Extracted action string content: 4, 4, 4
+LLMAgent final selected actions: IDs=[4, 4, 4], Descriptions=['move_east', 'move_east', 'move_east']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.309
+relative y : -0.048
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.295
+relative y : -0.028
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.261
+relative y : 0.003
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+Let's analyze the situation... We have three Marines (our units) facing off against three Marine enemies. The key to winning is to position ourselves aggressively while being mindful of our unit health.
+
+**Unit 0**, which appears to be slightly behind the others, could make a bold move by moving east (**ID: 4**) to get closer to the enemy Marines and prepare for potential engagement.
+
+**Unit 1**, situated relatively close to **Unit 0**, should mirror its neighbor's action and also move east (**ID: 4**). This will help us form a strong front line against the enemies.
+
+**Unit 2** could capitalize on its relative distance from the enemy group by moving south (**ID: 3**) towards their flank. This might create an opportunity for **Unit 0** and **Unit 1** to attack the enemies from behind while they're distracted by **Unit 2**.
+
+Here's my response:
+
+[4, 4, 3]
+
+I hope these orders will help us gain a strategic advantage and eventually defeat all enemy units!
+Extracted action string content: 4, 4, 3
+LLMAgent final selected actions: IDs=[4, 4, 3], Descriptions=['move_east', 'move_east', 'move_south']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.309
+relative y : -0.088
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.255
+relative y : -0.028
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.301
+relative y : 0.003
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.129
+relative y : 0.002
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.129
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.154
+relative y : 0.002
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+初始化 LLM Agent，使用模型： llama3:latest
+連接到 Ollama API： http://localhost:11434/v1
+成功連接到 Ollama API
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.025
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : 0.000
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.250
+relative y : 0.000
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.250
+relative y : -0.025
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.275
+relative y : 0.000
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the current global state and available actions, I recommend the following orders:
+
+[4, 4, 4]
+
+This will move all three marines to the east, getting closer to the enemy marines. The goal is to engage the enemies in a optimal position, taking into account their relative distances.
+Extracted action string content: 4, 4, 4
+LLMAgent final selected actions: IDs=[4, 4, 4], Descriptions=['move_east', 'move_east', 'move_east']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.062
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.250
+relative y : -0.037
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.210
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.210
+relative y : -0.024
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.234
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+After analyzing the situation, I decide to issue the following orders:
+
+[2, 4, 5]
+
+This order tells Unit 0 (Agent 0) to move north (ID 2), Unit 1 to move east (ID 4), and Unit 2 to move west (ID 5). My goal is to position my units to confront and potentially attack the enemy marines.
+Extracted action string content: 2, 4, 5
+LLMAgent final selected actions: IDs=[2, 4, 5], Descriptions=['move_north', 'move_east', 'move_west']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.240
+relative y : -0.042
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.261
+relative y : -0.071
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.000
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.170
+relative y : 0.001
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.170
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.194
+relative y : 0.001
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================
+LLM response:
+Based on the given information, my understanding is that I should order my three Marines to advance towards the enemy Marines.
+
+Here are the orders:
+[4, 4, 5]
+
+These orders would instruct units 0, 1, and 2 to move eastwards (unit 0), eastwards (unit 1), and westwards (unit 2) respectively.
+Extracted action string content: 4, 4, 5
+LLMAgent final selected actions: IDs=[4, 4, 5], Descriptions=['move_east', 'move_east', 'move_west']
+
+===== LLM PROMPT (Sending to API) =====
+You are an AI agent controlling 3 units in a StarCraft II scenario.
+Your objective is to defeat all enemy units by issuing commands to your units.
+--- CURRENT GLOBAL STATE ---
+ALLY #1:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.237
+relative y : -0.042
+unit type : Marine
+ALLY #2:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.261
+relative y : -0.031
+unit type : Marine
+ALLY #3:
+health : 100.0%
+weapon cooldown : 0.0%
+relative x : -0.225
+relative y : 0.040
+unit type : Marine
+ENEMY #1:
+health : 100.0%
+relative x : 0.129
+relative y : 0.002
+unit type : Marine
+ENEMY #2:
+health : 100.0%
+relative x : 0.129
+relative y : -0.023
+unit type : Marine
+ENEMY #3:
+health : 100.0%
+relative x : 0.154
+relative y : 0.002
+unit type : Marine
+
+--- ORDERS FOR YOUR UNITS ---
+For each of your 3 units, select one action from its list of available actions.
+In the last line respond with a formatted list of integer action IDs, one for each unit.
+For example, to order agent 0, 1, 2 to perform action ID 0, 1, 5 respectively, output: [0, 1, 5]
+Make sure the action ID given to each agent is available for each agent.
+-- Unit 0 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 1 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+-- Unit 2 --
+Available Actions (ID: Description):
+ - ID 1: stop
+ - ID 2: move_north
+ - ID 3: move_south
+ - ID 4: move_east
+ - ID 5: move_west
+
+Based on the state and available actions, provide the list of 3 action IDs for your units.
+=======================================

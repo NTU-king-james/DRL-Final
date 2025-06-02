@@ -22,8 +22,7 @@ This project implements and evaluates a novel QMIX+LLM collaborative framework w
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/qmix-llm.git
-cd qmix-llm
+git clone https://github.com/NTU-king-james/DRL-Final.git
 
 # Setup environment
 conda create -n pysc2-env python=3.8
@@ -36,13 +35,35 @@ pip install -r requirements.txt
 bash install_sc2.sh
 bash install_dependencies.sh
 ```
+### OLLAMA Setup
+To use LLMs, you need to install OLLAMA and download the required models. Follow these steps:
 
+1. Install OLLAMA
+2. Download the required models
+```bash
+ollama pull llama3
+ollama pull [the model you want to use, e.g., remijang/smac-sft-gemma3]
+```
 ### Map Installation
 
 1. Install PySC2
 2. Install SMAC
 3. Install SC2
 4. Get SMAC maps and put it in SC2PATH/Maps
+
+### Environment Setup
+
+```bash
+# IMPORTANT: Always use the pysc2-env environment
+cd /root/DRL-Final
+
+# Method 1: If conda activate works
+conda create -n pysc2-env python=3.8
+conda activate /root/miniconda3/envs/pysc2-env
+
+# Method 2: Use absolute path (recommended)
+/root/miniconda3/envs/pysc2-env/bin/python train.py [arguments]
+```
 
 ## 🧪 Experiment Categories
 
@@ -51,7 +72,7 @@ bash install_dependencies.sh
 #### Pure QMIX (無 LLM 指導)
 
 ```bash
-python test_llm.py --llm none --algo qmix --alignment-weight 0.0
+python train.py --llm none --algo qmix 
 ```
 
 - **Purpose**: Basic QMIX without LLM guidance
@@ -61,10 +82,10 @@ python test_llm.py --llm none --algo qmix --alignment-weight 0.0
 
 ```bash
 # Pre-trained LLM direct execution
-python test_llm.py --llm llama3 --algo none
+python train.py --llm llama3 --algo none
 
-# Fine-tuned LLM direct execution  
-python test_llm.py --llm ours --algo none
+# Fine-tuned LLM direct execution
+python train.py --llm ours --algo none
 ```
 
 - **Purpose**: LLM as direct policy (expert upper bound reference)
@@ -75,7 +96,7 @@ python test_llm.py --llm ours --algo none
 #### QMIX + Pre-trained LLM Guidance
 
 ```bash
-python test_llm.py --llm llama3 --algo qmix --alignment-weight 0.5
+python train.py --llm llama3 --algo qmix 
 ```
 
 - **Purpose**: Current implementation with general LLM
@@ -84,7 +105,7 @@ python test_llm.py --llm llama3 --algo qmix --alignment-weight 0.5
 #### QMIX + Fine-tuned LLM Guidance (核心創新點)
 
 ```bash
-python test_llm.py --llm ours --algo qmix --alignment-weight 0.5
+python train.py --llm ours --algo qmix 
 ```
 
 - **Purpose**: **Main experimental group** - domain-specific LLM guidance
@@ -93,39 +114,12 @@ python test_llm.py --llm ours --algo qmix --alignment-weight 0.5
 #### QMIX + Random LLM Guidance
 
 ```bash
-python test_llm.py --llm random --algo qmix --alignment-weight 0.5
+python train.py --llm random --algo qmix 
 ```
 
 - **Purpose**: Control for LLM "intelligence" vs. additional signal
 - **Expected**: Minimal improvement, proves LLM quality matters
 
-## 🚀 Usage Examples
-
-### Environment Setup
-
-```bash
-# IMPORTANT: Always use the pysc2-env environment
-cd /root/DRL-Final
-
-# Method 1: If conda activate works
-conda activate /root/miniconda3/envs/pysc2-env
-
-# Method 2: Use absolute path (recommended)
-/root/miniconda3/envs/pysc2-env/bin/python test_llm.py [arguments]
-```
-
-### Individual Experiments
-
-```bash
-# Test a specific configuration (using fixed alignment weight 0.5)
-python test_llm.py --llm llama3 --algo qmix --alignment-weight 0.5 --episodes 10
-
-# With verbose logging
-python test_llm.py --llm ours --algo qmix --alignment-weight 0.5 --verbose --episodes 5
-
-# Different map
-python test_llm.py --llm llama3 --algo qmix --alignment-weight 0.5 --map 8m --episodes 10
-```
 
 ### Full Ablation Study
 
@@ -136,63 +130,32 @@ python run_full_ablation.py
 # Results will be saved to ablation_results_TIMESTAMP/
 ```
 
-## 📊 Results & Visualization
-
-The project includes a comprehensive visualization and analysis system:
-
-### Analysis Functions
-
-```bash
-# Standard analysis
-python analyze_results.py
-
-# Comprehensive analysis with plots
-python analyze_results.py --comprehensive
-
-# Generate plots only
-python analyze_results.py --plots-only
-
-# Analyze specific directory
-python analyze_results.py --results-dir /path/to/results --comprehensive
-```
-
 ### Visualization Outputs
 
 The system generates 4 high-quality research plots:
 
 1. **Baseline Comparison**: QMIX learning curve vs pure LLM performance lines
 2. **LLM Quality Comparison**: Multi-curve comparison of different LLM guidance types
-3. **Alignment Weight Sensitivity**: Final performance vs alignment weight analysis
-4. **Performance Comparison**: Overall performance ranking bar chart
+3. **Performance Comparison**: Overall performance ranking bar chart
 
 ## 📄 Command Line Arguments
 
 | Argument | Choices | Default | Description |
 |----------|---------|---------|-------------|
-| `--llm` | `llama3`, `ours`, `random`, `none` | `llama3` | LLM type for guidance |
+| `--llm` | `llama3`, `ours`, `random`, `none` | `none` | LLM type for guidance |
 | `--algo` | `qmix`, `none` | `qmix` | Algorithm choice |
 | `--alignment-weight` | float | `0.5` | Weight for alignment reward |
 | `--map` | string | `3m` | SMAC map name |
 | `--episodes` | int | `10` | Number of episodes |
-| `--max-steps` | int | `100` | Max steps per episode |
+| `--max-steps` | int | `200` | Max steps per episode |
 | `--verbose` | flag | `False` | Enable detailed logging |
-| `--render` | flag | `False` | Render environment |
-| `--save-replay` | flag | `False` | Save game replays |
 | `--seed` | int | `0` | Random seed |
 
-## 📝 Expected Results Hierarchy
-
-1. **QMIX + Fine-tuned LLM** (best performance)
-2. **QMIX + Pre-trained LLM** (good performance)  
-3. **Pure Fine-tuned LLM** (expert reference)
-4. **Pure QMIX** (baseline)
-5. **QMIX + Random LLM** (minimal improvement)
-6. **Pure Pre-trained LLM** (variable)
 
 ## 🔗 System Architecture
 
 ```
-test_llm.py (Main Implementation)
+train.py (Main Implementation)
 ├── LLMAgent (llama3/ours/random/none)
 ├── QMIXAgent (with alignment reward mechanism)
 ├── RandomAgent (baseline)
@@ -203,14 +166,6 @@ run_full_ablation.py (Experiment Runner)
 ├── Result saving (JSON + logs)
 └── Error handling & timeouts
 
-analyze_results.py (Analysis & Visualization Tool)
-├── Log parsing for metrics
-├── Summary generation  
-├── Best configuration identification
-├── Four core research plots
-├── Comprehensive statistical analysis
-├── Demo data generation
-└── Multiple analysis modes
 ```
 
 ## 📊 Latest Visualization Results

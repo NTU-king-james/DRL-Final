@@ -1245,7 +1245,7 @@ def parse_args():
     parser.add_argument('--verbose', action='store_true',
                        help='Enable verbose logging')
     parser.add_argument('--render', action='store_true',
-                       help='Render the environment')
+                       help='Render environment')
     parser.add_argument('--save-replay', action='store_true',
                        help='Save game replays')
     parser.add_argument('--seed', type=int, default=0,
@@ -1296,6 +1296,7 @@ def run_experiment(args):
     print(f"  Max Steps: {args.max_steps}")
     print(f"  Seed: {args.seed}")
     print(f"  Mode: {args.mode}")
+    print(f"  Render: {args.render}")
     if args.mode == 'test' and args.load_episode:
         print(f"  Load Episode: {args.load_episode}")
     print("=" * 60)

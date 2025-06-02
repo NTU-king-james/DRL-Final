@@ -4,10 +4,7 @@ Simplified Ablation Study Runner for QMIX-LLM System
 
 This script runs the core ablation study experiments:
 1. Baselines (Pure QMIX, Pure LLM variants)
-2. LLM Quality & Adaptability Ablations (with fixed alignment_weight=0.5)
-
-Note: Alignment weight sensitivity analysis has been removed for time efficiency.
-All QMIX+LLM experiments use alignment_weight=0.5.
+2. LLM Quality & Adaptability Ablations
 """
 
 import subprocess
@@ -23,50 +20,44 @@ EXPERIMENT_CONFIGS = {
     "baseline_pure_qmix": {
         "llm": "none", 
         "algo": "qmix", 
-        "alignment_weight": 0.0,
         "mode": "train",
         "description": "Pure QMIX (no LLM guidance)"
     },
     "baseline_pure_llm_pretrained": {
         "llm": "llama3", 
         "algo": "none", 
-        "alignment_weight": 0.0,
         "mode": "train",
         "description": "Pure LLM Execution (pre-trained llama3:latest)"
     },
     "baseline_pure_llm_finetuned": {
         "llm": "ours", 
         "algo": "none", 
-        "alignment_weight": 0.0,
         "mode": "train",
         "description": "Pure LLM Execution (fine-tuned llama3)"
     },
 
-    # 2. LLM Quality & Adaptability Ablations (Fixed alignment_weight=0.5)
+    # 2. LLM Quality & Adaptability Ablations
     "qmix_pretrained_llm": {
         "llm": "llama3", 
         "algo": "qmix", 
-        "alignment_weight": 0.5,
         "mode": "train",
         "description": "QMIX + Pre-trained LLM Guidance"
     },
     "qmix_random_llm": {
         "llm": "random", 
         "algo": "qmix", 
-        "alignment_weight": 0.5,
         "mode": "train",
         "description": "QMIX + Random LLM Guidance"
     },
     "qmix_finetuned_llm": {
         "llm": "ours", 
         "algo": "qmix", 
-        "alignment_weight": 0.5,
         "mode": "train",
         "description": "QMIX + Fine-tuned LLM Guidance (MAIN EXPERIMENT)"
     }
 }
 
-def run_single_experiment(config_name, config, episodes=10, max_steps=100, map_name="3m", seed=42):
+def run_single_experiment(config_name, config, episodes=200, max_steps=100, map_name="3m", seed=0):
     """Run a single experiment configuration."""
     print(f"\n{'='*80}")
     print(f"RUNNING: {config_name}")
@@ -81,7 +72,7 @@ def run_single_experiment(config_name, config, episodes=10, max_steps=100, map_n
     result_file = f"{results_dir}/{config_name}.json"
     
     # Create command that properly activates conda environment
-    python_cmd = f"python test_llm.py --llm {config['llm']} --algo {config['algo']} --alignment-weight {config['alignment_weight']} --map {map_name} --episodes {episodes} --max-steps {max_steps} --seed {seed} --verbose"
+    python_cmd = f"python train.py --llm {config['llm']} --algo {config['algo']} --map {map_name} --episodes {episodes} --max-steps {max_steps} --seed {seed} --verbose"
     
     cmd = [
         "bash", "-c",
@@ -194,8 +185,8 @@ def run_ablation_study(episodes=10, max_steps=100, map_name="3m", seed=42, skip_
     print(f"   Max steps per episode: {max_steps}")
     print(f"   Map: {map_name}")
     print(f"   Random seed: {seed}")
-    print(f"   Fixed alignment weight: 0.5 (for QMIX+LLM experiments)")
-    print(f"🔬 Total experiments: {len(EXPERIMENT_CONFIGS)} (alignment weight ablations removed)")
+    print(f"   Using train.py script")
+    print(f"🔬 Total experiments: {len(EXPERIMENT_CONFIGS)}")
     print("=" * 80)
     
     results = {}
@@ -232,7 +223,6 @@ def run_ablation_study(episodes=10, max_steps=100, map_name="3m", seed=42, skip_
     print(f"⏱️  Total Duration: {total_time/60:.1f} minutes ({total_time:.1f} seconds)")
     print(f"📊 Success Rate: {successful}/{len(EXPERIMENT_CONFIGS)} ({successful/len(EXPERIMENT_CONFIGS)*100:.1f}%)")
     print(f"📁 Metadata saved in: /root/DRL-Final/ablation_results/")
-    print(f"💡 Note: Alignment weight fixed at 0.5 for all QMIX+LLM experiments")
     
     print(f"\n📋 DETAILED RESULTS:")
     print("-" * 60)

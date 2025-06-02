@@ -27,7 +27,19 @@ cd pymarl2
 bash install_sc2.sh
 bash install_dependencies.sh
 ```
+### Ollama Setup
+1. Install [Ollama](https://ollama.com/docs/installation)
+2. Pull the LLM model:
+   ```bash
+   ollama pull llama3
+   ollama pull remijang/smac-sft-gemma3
+   ```
+3. Start the Ollama server:
+   ```bash
+   ollama serve
+   ```
 
+   
 ### Map Installation
 
 1. Install PySC2

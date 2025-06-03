@@ -1,4 +1,4 @@
-# test_llm.py
+# train.py
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -8,7 +8,7 @@ import numpy as np
 import sys
 import os
 # Use local SMAC environment instead of pymarl2
-from smac.env import StarCraft2Env
+from smac_env import StarCraft2Env
 from translate_1 import get_state_NL
 
 import openai

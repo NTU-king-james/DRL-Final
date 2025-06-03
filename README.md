@@ -21,6 +21,7 @@ conda activate pysc2-env
 
 # Install requirements
 pip install -r requirements.txt
+pip install git+https://github.com/oxwhirl/smac.git
 
 ```
 ### Ollama Setup
@@ -64,19 +65,19 @@ python train.py --llm ours --algo none
 ### QMIX + Pre-trained LLM Guidance
 
 ```bash
-python train.py --llm llama3 --algo qmix --alignment-weight 0.5
+python train.py --llm llama3 --algo qmix 
 ```
 
 ### QMIX + Fine-tuned LLM Guidance
 
 ```bash
-python train.py --llm ours --algo qmix --alignment-weight 0.5
+python train.py --llm ours --algo qmix 
 ```
 
 ### QMIX + Random LLM Guidance
 
 ```bash
-python train.py --llm random --algo qmix --alignment-weight 0.5
+python train.py --llm random --algo qmix 
 ```
 
 ### Full Ablation Study

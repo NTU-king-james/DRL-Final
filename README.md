@@ -49,35 +49,35 @@ pip install git+https://github.com/oxwhirl/smac.git
 ### Pure QMIX
 
 ```bash
-python train.py --llm none --algo qmix 
+python3.8 train.py --llm none --algo qmix 
 ```
 
 ### Pure LLM Execution
 
 ```bash
 # Pre-trained LLM direct execution
-python train.py --llm llama3 --algo none
+python3.8 train.py --llm llama3 --algo none
 
 # Fine-tuned LLM direct execution  
-python train.py --llm ours --algo none
+python3.8 train.py --llm ours --algo none
 ```
 
 ### QMIX + Pre-trained LLM Guidance
 
 ```bash
-python train.py --llm llama3 --algo qmix 
+python3.8 train.py --llm llama3 --algo qmix 
 ```
 
 ### QMIX + Fine-tuned LLM Guidance
 
 ```bash
-python train.py --llm ours --algo qmix 
+python3.8 train.py --llm ours --algo qmix 
 ```
 
 ### QMIX + Random LLM Guidance
 
 ```bash
-python train.py --llm random --algo qmix 
+python3.8 train.py --llm random --algo qmix 
 ```
 
 ### Full Ablation Study

@@ -8,7 +8,7 @@ import numpy as np
 import sys
 import os
 # Use local SMAC environment instead of pymarl2
-from smac_env import StarCraft2Env
+from smac.env import StarCraft2Env
 from translate_1 import get_state_NL
 
 import openai

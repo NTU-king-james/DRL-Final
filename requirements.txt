@@ -1,6 +1,6 @@
-PySC2                    4.0.0
-openai                   0.28.0
-torch                    2.4.1
-numpy                    1.24.4
-tqdm                     4.67.1
-matplotlib               3.7.5
+PySC2==4.0.0
+openai==0.28.0
+torch==2.4.1
+numpy==1.24.4
+tqdm==4.67.1
+matplotlib==3.7.5

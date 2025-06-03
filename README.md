@@ -49,7 +49,7 @@ pip install git+https://github.com/oxwhirl/smac.git
 ### Pure QMIX
 
 ```bash
-python train.py --llm none --algo qmix --alignment-weight 0.0
+python train.py --llm none --algo qmix 
 ```
 
 ### Pure LLM Execution
